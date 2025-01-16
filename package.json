@@ -21,7 +21,9 @@
     "LICENSE",
     "HISTORY.md",
     "README.md",
+    "typings.json",
     "main.d.ts",
+    "types.d.ts",
     "objects/*.d.ts",
     "resources/*.d.ts"
   ]
