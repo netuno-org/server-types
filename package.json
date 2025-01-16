@@ -1,0 +1,28 @@
+{
+  "name": "@netuno/server-types",
+  "version": "1.0.0",
+  "description": "TypeScript declarations to server-side JavaScript development over the Netuno platform.",
+  "main": "main.d.ts",
+  "types": "main.d.ts",
+  "author": "sitana.pt",
+  "license": "ISC",
+  "repository": "netuno-org/server-types",
+  "keywords": [
+    "netuno",
+    "server",
+    "types",
+    "java",
+    "resources",
+    "objects",
+    "util",
+    "utility"
+  ],
+  "files": [
+    "LICENSE",
+    "HISTORY.md",
+    "README.md",
+    "main.d.ts",
+    "objects/*.d.ts",
+    "resources/*.d.ts"
+  ]
+}
