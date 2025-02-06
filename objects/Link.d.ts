@@ -1,5 +1,5 @@
 import {} from '../types';
-import RelationLink from './RelationLink';
+import RelationshipLink from './RelationshipLink';
 import Where from './Where';
 
 interface Link {
@@ -7,7 +7,7 @@ interface Link {
 		(): string;
 	}
 	getRelationLink: {
-		(): RelationLink;
+		(): RelationshipLink;
 	}
 	getWhere: {
 		(): Where;
@@ -19,7 +19,7 @@ interface Link {
 		(form: string): Link;
 	}
 	setRelationLink: {
-		(relationLink: RelationLink): Link;
+		(relationLink: RelationshipLink): Link;
 	}
 	setWhere: {
 		(where: Where): Link;

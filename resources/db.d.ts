@@ -1,10 +1,14 @@
-import {java} from '../types';
+import {java, org} from '../types';
 import DBBatch from '../objects/DBBatch';
 import CheckExists from '../objects/CheckExists';
 import Column from '../objects/Column';
 import Values from '../objects/Values';
 import DataSchema from '../objects/DataSchema';
+import Operation from '../objects/Operation';
+import Where from '../objects/Where';
 import Index from '../objects/Index';
+import Link from '../objects/Link';
+import Relationship from '../objects/Relationship';
 import DBSearchResult from '../objects/DBSearchResult';
 import Sequence from '../objects/Sequence';
 import Table from '../objects/Table';
@@ -68,6 +72,10 @@ interface DB {
 	findQuery: {
 		(table: string, params: Values): string;
 	}
+	form: {
+		(tableName: string): Operation;
+		(formName: string, where: Where): Operation;
+	}
 	get: {
 		(table: string, id: int): Values;
 		(table: string, uid: string): Values;
@@ -114,6 +122,22 @@ interface DB {
 	}
 	key: {
 		(): string;
+	}
+	link: {
+		(formLink: string): Link;
+		(formLink: string, where: Where): Link;
+		(formLink: string, where: Where, link: Link): Link;
+	}
+	manyToOne: {
+		(tableName: string, column: string): Relationship;
+		(tableName: string, column: string, where: Where): Relationship;
+	}
+	oneToMany: {
+		(tableName: string, column: string): Relationship;
+		(tableName: string, column: string, where: Where): Relationship;
+	}
+	pagination: {
+		(page: int, pageSize: int): org.netuno.tritao.db.form.pagination.Pagination;
 	}
 	param: {
 		(type: string): string;
@@ -215,6 +239,10 @@ interface DB {
 		(table: string, dataItems: java.lang.Object[]): number[];
 		(table: string, dataItems: java.util.List): number[];
 		(table: string, dataItems: Values): number[];
+	}
+	where: {
+		(): Where;
+		(column: string): Where;
 	}
 }
 declare const _db: DB;

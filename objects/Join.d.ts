@@ -1,13 +1,13 @@
 import {org} from '../types';
-import Relation from './Relation';
+import Relationship from './Relationship';
 import Where from './Where';
 
 interface Join {
 	getJoinType: {
-		(): org.netuno.tritao.query.join.JoinType;
+		(): org.netuno.tritao.db.form.join.JoinType;
 	}
 	getRelation: {
-		(): Relation;
+		(): Relationship;
 	}
 	getTable: {
 		(): string;
@@ -16,10 +16,10 @@ interface Join {
 		(): Where;
 	}
 	setJoinType: {
-		(joinType: org.netuno.tritao.query.join.JoinType): Join;
+		(joinType: org.netuno.tritao.db.form.join.JoinType): Join;
 	}
 	setRelation: {
-		(ralation: Relation): Join;
+		(ralation: Relationship): Join;
 	}
 	setTable: {
 		(tableName: string): Join;

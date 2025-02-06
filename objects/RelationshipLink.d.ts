@@ -2,7 +2,7 @@ import {java} from '../types';
 import Values from './Values';
 import DataSchema from './DataSchema';
 
-interface RelationLink {
+interface RelationshipLink {
 	getFormLink: {
 		(): string;
 	}
@@ -13,10 +13,10 @@ interface RelationLink {
 		(): boolean;
 	}
 	setFormLink: {
-		(form: string): RelationLink;
+		(form: string): RelationshipLink;
 	}
 	setSubLinks: {
-		(subLinks: Values | DataSchema | java.util.Map): RelationLink;
+		(subLinks: Values | DataSchema | java.util.Map): RelationshipLink;
 	}
 }
-export default RelationLink;
+export default RelationshipLink;

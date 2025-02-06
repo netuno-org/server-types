@@ -1,37 +1,63 @@
 import {java} from '../types';
-import RelationOperator from './RelationOperator';
-import Values from './Values';
-import DataSchema from './DataSchema';
-import Condition from './Condition';
 
 interface Where {
 	and: {
-		(column: string, value: java.lang.Object): Where;
-		(column: string, relationOperator: RelationOperator): Where;
+		(column: string): Where;
 		(where: Where): Where;
 	}
-	getConditions: {
-		(): Values | DataSchema | java.util.Map;
+	contains: {
+		(value: java.lang.Object): Where;
 	}
-	getFirstCondition: {
-		(): Condition;
+	different: {
+		(value: java.lang.Object): Where;
+	}
+	endsWith: {
+		(value: java.lang.Object): Where;
+	}
+	equal: {
+		(value: java.lang.Object): Where;
+	}
+	getConditions: {
+		(): java.util.List;
 	}
 	getTable: {
 		(): string;
 	}
+	greaterOrEqualsThan: {
+		(value: java.lang.Object): Where;
+	}
+	greaterThan: {
+		(value: java.lang.Object): Where;
+	}
+	in: {
+		(values: java.lang.Object[]): Where;
+		(values: java.lang.Object): Where;
+	}
+	inRaw: {
+		(value: java.lang.Object): Where;
+	}
+	lessOrEqualsThan: {
+		(value: java.lang.Object): Where;
+	}
+	lessThan: {
+		(value: java.lang.Object): Where;
+	}
+	notIn: {
+		(values: java.lang.Object[]): Where;
+		(values: java.lang.Object): Where;
+	}
 	or: {
-		(column: string, value: java.lang.Object): Where;
-		(column: string, relationOperator: RelationOperator): Where;
+		(column: string): Where;
 		(where: Where): Where;
 	}
 	setConditions: {
-		(conditions: Values | DataSchema | java.util.Map): Where;
-	}
-	setFirstCondition: {
-		(firstCondition: Condition): Where;
+		(conditions: java.util.List): Where;
 	}
 	setTable: {
 		(tableName: string): Where;
+	}
+	startsWith: {
+		(value: java.lang.Object): Where;
 	}
 }
 export default Where;

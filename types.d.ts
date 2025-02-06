@@ -270,23 +270,25 @@ export declare namespace org.netuno.tritao.db {
 	export type DataItem$StatusType = any;
 	export type Builder = any;
 }
+export declare namespace org.netuno.tritao.db.form {
+	export type Field = any;
+}
+export declare namespace org.netuno.tritao.db.form.join {
+	export type JoinType = any;
+	export type RelationshipType = any;
+}
+export declare namespace org.netuno.tritao.db.form.pagination {
+	export type Pagination = any;
+}
+export declare namespace org.netuno.tritao.db.form.where {
+	export type ConditionalOperatorType = any;
+	export type RelationalOperatorType = any;
+}
 export declare namespace org.netuno.tritao.db.manager {
 	export type Column$Type = any;
 }
-export declare namespace org.netuno.tritao.query.join {
-	export type JoinType = any;
-	export type RelationType = any;
-}
-export declare namespace org.netuno.tritao.query.pagination {
-	export type Pagination = any;
-}
-export declare namespace org.netuno.tritao.query.where {
-	export type ConditionOperator = any;
-	export type RelationOperatorType = any;
-}
 export declare namespace org.netuno.tritao.resource {
 	export type Setup$RunResult = any;
-	export type WS$WSMessage = any;
 }
 export declare namespace org.w3c.dom {
 	export type Document = any;

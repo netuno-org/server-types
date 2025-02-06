@@ -1,5 +1,6 @@
-import {jakarta, org} from '../types';
+import {jakarta} from '../types';
 import Values from '../objects/Values';
+import WSMessage from '../objects/WSMessage';
 
 interface WS {
 	allSessionsEndpoints: {
@@ -82,7 +83,7 @@ interface WS {
 		(id: string): string;
 	}
 	getMessage: {
-		(): org.netuno.tritao.resource.WS$WSMessage;
+		(): WSMessage;
 	}
 	getPath: {
 		(): Values;
@@ -118,7 +119,7 @@ interface WS {
 		(): boolean;
 	}
 	message: {
-		(): org.netuno.tritao.resource.WS$WSMessage;
+		(): WSMessage;
 	}
 	path: {
 		(): Values;
