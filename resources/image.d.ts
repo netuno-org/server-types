@@ -192,6 +192,7 @@ interface Image {
 	init: {
 		(width: int, height: int): Image;
 		(image: java.awt.Image): Image;
+		(file: java.io.File): Image;
 		(input: InputStream): Image;
 		(input: javax.imageio.stream.ImageInputStream): Image;
 		(file: File): Image;
@@ -222,6 +223,7 @@ interface Image {
 		(width: int, height: int): Image;
 	}
 	save: {
+		(file: java.io.File, type: string): Image;
 		(output: OutputStream, type: string): Image;
 		(output: javax.imageio.stream.ImageOutputStream, type: string): Image;
 		(file: File, type: string): Image;

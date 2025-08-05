@@ -694,6 +694,10 @@ interface Res {
 	toStringArray: {
 		(): java.lang.String[];
 	}
+	typedForEach: {
+		(action: java.util.function.BiConsumer): void;
+		(action: java.util.function.Consumer): void;
+	}
 	unset: {
 		(key: string): java.lang.Object;
 	}

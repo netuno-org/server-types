@@ -154,6 +154,9 @@ interface Header {
 	clear: {
 		(): void;
 	}
+	clientIP: {
+		(): string;
+	}
 	cloneJSON: {
 		(): Values;
 	}
@@ -758,6 +761,10 @@ interface Header {
 	}
 	toStringArray: {
 		(): java.lang.String[];
+	}
+	typedForEach: {
+		(action: java.util.function.BiConsumer): void;
+		(action: java.util.function.Consumer): void;
 	}
 	unset: {
 		(key: string): java.lang.Object;

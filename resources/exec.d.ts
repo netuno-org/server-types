@@ -185,6 +185,9 @@ interface Exec {
 		(path: string): ScriptResult;
 		(path: string, path: boolean): ScriptResult;
 	}
+	debug: {
+		(): void;
+	}
 	ensureJail: {
 		(jailPath: string): void;
 	}
@@ -675,6 +678,10 @@ interface Exec {
 	}
 	toStringArray: {
 		(): java.lang.String[];
+	}
+	typedForEach: {
+		(action: java.util.function.BiConsumer): void;
+		(action: java.util.function.Consumer): void;
 	}
 	unset: {
 		(key: string): java.lang.Object;

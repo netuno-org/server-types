@@ -10,7 +10,7 @@ import _storage from './storage';
 interface XLS {
 	activeSheet: {
 		(index: int): XLS;
-		(index: org.apache.poi.hssf.usermodel.HSSFSheet): XLS;
+		(sheet: org.apache.poi.ss.usermodel.Sheet): XLS;
 	}
 	addDataTable: {
 		(rowIndex: int, colIndex: int, data: java.util.List): XLSPosition;
@@ -43,13 +43,16 @@ interface XLS {
 		(format: string): org.apache.poi.ss.usermodel.CellStyle;
 	}
 	color: {
-		(color: string): short;
+		(color: string): java.lang.Object;
 	}
 	columnReference: {
 		(index: int): string;
 		(index: string): int;
 	}
 	create: {
+		(): XLS;
+	}
+	create2007: {
 		(): XLS;
 	}
 	createSheet: {

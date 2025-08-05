@@ -28,12 +28,14 @@ export declare namespace com.itextpdf.kernel.font {
 }
 export declare namespace com.itextpdf.kernel.geom {
 	export type PageSize = any;
+	export type Rectangle = any;
 }
 export declare namespace com.itextpdf.kernel.pdf {
 	export type PdfDocument = any;
 	export type PdfPage = any;
 	export type PdfReader = any;
 	export type PdfWriter = any;
+	export type PdfString = any;
 }
 export declare namespace com.itextpdf.kernel.pdf.canvas {
 	export type PdfCanvas = any;
@@ -43,6 +45,7 @@ export declare namespace com.itextpdf.kernel.pdf.canvas.draw {
 }
 export declare namespace com.itextpdf.layout {
 	export type Document = any;
+	export type Style = any;
 }
 export declare namespace com.itextpdf.layout.borders {
 	export type Border = any;
@@ -53,8 +56,13 @@ export declare namespace com.itextpdf.layout.element {
 	export type Cell = any;
 	export type Image = any;
 	export type Paragraph = any;
-	export type Table = any;
 	export type Text = any;
+	export type Table = any;
+}
+export declare namespace com.itextpdf.layout.properties {
+	export type HorizontalAlignment = any;
+	export type TextAlignment = any;
+	export type VerticalAlignment = any;
 }
 export declare namespace com.rabbitmq.client {
 	export type Channel = any;
@@ -205,9 +213,6 @@ export declare namespace org.apache.commons.csv {
 	export type CSVParser = any;
 	export type CSVPrinter = any;
 }
-export declare namespace org.apache.poi.hssf.usermodel {
-	export type HSSFSheet = any;
-}
 export declare namespace org.apache.poi.ss.usermodel {
 	export type Sheet = any;
 	export type ClientAnchor$AnchorType = any;
@@ -259,16 +264,21 @@ export declare namespace org.netuno.psamata.mail {
 export declare namespace org.netuno.psamata.net {
 	export type Remote$Response = any;
 }
+export declare namespace org.netuno.psamata.os {
+	export type ProcessLauncher = any;
+}
 export declare namespace org.netuno.psamata.ssh {
 	export type SSHClient = any;
 }
 export declare namespace org.netuno.tritao.com {
+	export type ComponentData = any;
 	export type Configuration = any;
 }
 export declare namespace org.netuno.tritao.db {
 	export type DataItem$Status = any;
 	export type DataItem$StatusType = any;
 	export type Builder = any;
+	export type DBExecutor = any;
 }
 export declare namespace org.netuno.tritao.db.form {
 	export type Field = any;
@@ -285,7 +295,11 @@ export declare namespace org.netuno.tritao.db.form.where {
 	export type RelationalOperatorType = any;
 }
 export declare namespace org.netuno.tritao.db.manager {
+	export type ManagerBase = any;
 	export type Column$Type = any;
+}
+export declare namespace org.netuno.tritao.hili {
+	export type Hili = any;
 }
 export declare namespace org.netuno.tritao.resource {
 	export type Setup$RunResult = any;

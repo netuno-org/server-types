@@ -43,5 +43,8 @@ interface Relationship {
 	setWhere: {
 		(where: Where): Relationship;
 	}
+	where: {
+		(where: Where): Relationship;
+	}
 }
 export default Relationship;

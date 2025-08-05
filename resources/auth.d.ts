@@ -19,6 +19,14 @@ interface Auth {
 		(data: Values | DataSchema | java.util.Map): Auth;
 		(data: Values): Auth;
 	}
+	attemptsInterval: {
+		(): int;
+		(attemptsInterval: int): Auth;
+	}
+	attemptsMaxFails: {
+		(): int;
+		(attemptsMaxFails: int): Auth;
+	}
 	check: {
 		(password: string): boolean;
 		(username: string, password: string): boolean;

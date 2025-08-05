@@ -119,6 +119,9 @@ interface PDF {
 	getPdfWriter: {
 		(): com.itextpdf.kernel.pdf.PdfWriter;
 	}
+	horizontalAlignment: {
+		(type: string): com.itextpdf.layout.properties.HorizontalAlignment;
+	}
 	image: {
 		(file: File): com.itextpdf.layout.element.Image;
 		(storage: typeof _storage): com.itextpdf.layout.element.Image;
@@ -151,10 +154,23 @@ interface PDF {
 		(page: string): com.itextpdf.kernel.geom.PageSize;
 	}
 	paragraph: {
+		(): com.itextpdf.layout.element.Paragraph;
+		(text: com.itextpdf.layout.element.Text): com.itextpdf.layout.element.Paragraph;
 		(text: string): com.itextpdf.layout.element.Paragraph;
+	}
+	paragraphArea: {
+		(paragraph: com.itextpdf.layout.element.Paragraph): com.itextpdf.kernel.geom.Rectangle;
 	}
 	setDocument: {
 		(document: com.itextpdf.layout.Document): PDF;
+	}
+	string: {
+		(text: number[]): com.itextpdf.kernel.pdf.PdfString;
+		(text: string): com.itextpdf.kernel.pdf.PdfString;
+		(text: string, encoding: string): com.itextpdf.kernel.pdf.PdfString;
+	}
+	style: {
+		(): com.itextpdf.layout.Style;
 	}
 	table: {
 		(columns: number[]): com.itextpdf.layout.element.Table;
@@ -172,17 +188,62 @@ interface PDF {
 	text: {
 		(content: string): com.itextpdf.layout.element.Text;
 	}
+	textAlignment: {
+		(type: string): com.itextpdf.layout.properties.TextAlignment;
+	}
 	toHTML: {
 		(content: InputStream): string;
 		(content: File): string;
 		(content: InputStream): string;
 		(content: typeof _storage): string;
 	}
+	toImage: {
+		(input: InputStream, startPage: int, endPage: int, destinationPath: File, filePrefixName: string, fileExtension: string, dpi: int): void;
+		(input: InputStream, startPage: int, endPage: int, destinationPath: typeof _storage, filePrefixName: string, fileExtension: string, dpi: int): void;
+		(input: InputStream, pageNumber: int, destinationPath: File, filePrefixName: string, fileExtension: string): void;
+		(input: InputStream, pageNumber: int, destinationPath: File, filePrefixName: string, fileExtension: string, dpi: int): void;
+		(input: InputStream, pageNumber: int, destinationPath: typeof _storage, filePrefixName: string, fileExtension: string): void;
+		(input: InputStream, pageNumber: int, destinationPath: typeof _storage, filePrefixName: string, fileExtension: string, dpi: int): void;
+		(input: InputStream, destinationPath: File, filePrefixName: string, fileExtension: string): void;
+		(input: InputStream, destinationPath: File, filePrefixName: string, fileExtension: string, dpi: int): void;
+		(input: InputStream, destinationPath: typeof _storage, filePrefixName: string, fileExtension: string): void;
+		(input: InputStream, destinationPath: typeof _storage, filePrefixName: string, fileExtension: string, dpi: int): void;
+		(source: File, startPage: int, endPage: int, destinationPath: File, filePrefixName: string, fileExtension: string, dpi: int): void;
+		(source: File, startPage: int, endPage: int, destinationPath: typeof _storage, filePrefixName: string, fileExtension: string, dpi: int): void;
+		(source: File, pageNumber: int, destinationPath: File, filePrefixName: string, fileExtension: string): void;
+		(source: File, pageNumber: int, destinationPath: File, filePrefixName: string, fileExtension: string, dpi: int): void;
+		(source: File, pageNumber: int, destinationPath: typeof _storage, filePrefixName: string, fileExtension: string): void;
+		(source: File, pageNumber: int, destinationPath: typeof _storage, filePrefixName: string, fileExtension: string, dpi: int): void;
+		(source: File, destinationPath: File, filePrefixName: string, fileExtension: string): void;
+		(source: File, destinationPath: File, filePrefixName: string, fileExtension: string, dpi: int): void;
+		(source: File, destinationPath: typeof _storage, filePrefixName: string, fileExtension: string): void;
+		(source: File, destinationPath: typeof _storage, filePrefixName: string, fileExtension: string, dpi: int): void;
+		(source: typeof _storage, startPage: int, endPage: int, destinationPath: File, filePrefixName: string, fileExtension: string, dpi: int): void;
+		(source: typeof _storage, startPage: int, endPage: int, destinationPath: typeof _storage, filePrefixName: string, fileExtension: string, dpi: int): void;
+		(source: typeof _storage, pageNumber: int, destinationPath: File, filePrefixName: string, fileExtension: string): void;
+		(source: typeof _storage, pageNumber: int, destinationPath: File, filePrefixName: string, fileExtension: string, dpi: int): void;
+		(source: typeof _storage, pageNumber: int, destinationPath: typeof _storage, filePrefixName: string, fileExtension: string): void;
+		(source: typeof _storage, pageNumber: int, destinationPath: typeof _storage, filePrefixName: string, fileExtension: string, dpi: int): void;
+		(source: typeof _storage, destinationPath: File, filePrefixName: string, fileExtension: string): void;
+		(source: typeof _storage, destinationPath: File, filePrefixName: string, fileExtension: string, dpi: int): void;
+		(source: typeof _storage, destinationPath: typeof _storage, filePrefixName: string, fileExtension: string): void;
+		(source: typeof _storage, destinationPath: typeof _storage, filePrefixName: string, fileExtension: string, dpi: int): void;
+	}
+	toImageAsByteArray: {
+		(input: InputStream, startPage: int, endPage: int, fileExtension: string, dpi: int): [[B;
+		(input: InputStream, pageNumber: int, fileExtension: string): [[B;
+		(input: InputStream, pageNumber: int, fileExtension: string, dpi: int): [[B;
+		(input: InputStream, fileExtension: string): [[B;
+		(input: InputStream, fileExtension: string, dpi: int): [[B;
+	}
 	toText: {
 		(content: InputStream): string;
 		(content: File): string;
 		(content: InputStream): string;
 		(content: typeof _storage): string;
+	}
+	verticalAlignment: {
+		(type: string): com.itextpdf.layout.properties.VerticalAlignment;
 	}
 }
 declare const _pdf: PDF;

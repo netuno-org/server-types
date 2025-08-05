@@ -37,6 +37,7 @@ interface HTML {
 	}
 	safelist: {
 		(): org.jsoup.safety.Safelist;
+		(type: string): org.jsoup.safety.Safelist;
 		(copy: org.jsoup.safety.Safelist): org.jsoup.safety.Safelist;
 	}
 }

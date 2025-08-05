@@ -1,14 +1,8 @@
 import {} from '../types';
 
-interface OSCommand {
-	error: {
-		(): string;
-	}
+interface ProcessResult {
 	exitCode: {
 		(): int;
-	}
-	getError: {
-		(): string;
 	}
 	getExitCode: {
 		(): int;
@@ -16,11 +10,17 @@ interface OSCommand {
 	getOutput: {
 		(): string;
 	}
+	getOutputError: {
+		(): string;
+	}
 	output: {
+		(): string;
+	}
+	outputError: {
 		(): string;
 	}
 	toString: {
 		(): string;
 	}
 }
-export default OSCommand;
+export default ProcessResult;

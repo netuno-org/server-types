@@ -28,7 +28,10 @@ interface Operation {
 		(column: string): Operation;
 		(column: string, alias: string): Operation;
 	}
-	getFields: {
+	getFieldsToGet: {
+		(): java.util.List;
+	}
+	getFieldsToSet: {
 		(): java.util.List;
 	}
 	getFormName: {
@@ -56,6 +59,7 @@ interface Operation {
 		(): Where;
 	}
 	group: {
+		(order: java.lang.String[]): Operation;
 		(order: string): Operation;
 	}
 	insert: {
@@ -81,6 +85,7 @@ interface Operation {
 		(formLink: string, link: Link): Operation;
 		(formLink: string, where: Where): Operation;
 		(formLink: string, where: Where, link: Link): Operation;
+		(formLink: Link): Operation;
 	}
 	order: {
 		(column: string, order: string): Operation;
@@ -104,8 +109,11 @@ interface Operation {
 	setDistinct: {
 		(enabled: boolean): Operation;
 	}
-	setFields: {
+	setFieldsToGet: {
 		(fields: java.util.List): Operation;
+	}
+	setFieldsToSet: {
+		(fieldsToSet: java.util.List): Operation;
 	}
 	setFormName: {
 		(tableName: string): Operation;

@@ -46,11 +46,11 @@ interface Out {
 		(): boolean;
 	}
 	json: {
-		(json: java.lang.Object): Out;
-		(json: string): Out;
-		(json: java.util.List): Out;
-		(json: Values | DataSchema | java.util.Map): Out;
-		(json: Values): Out;
+		(Values: java.lang.Object): Out;
+		(String: string): Out;
+		(Values: java.util.List): Out;
+		(Values: Values | DataSchema | java.util.Map): Out;
+		(Values: Values): Out;
 	}
 	jsonHTMLEscape: {
 		(): boolean;
@@ -58,7 +58,7 @@ interface Out {
 	}
 	jsonIdentFactor: {
 		(): int;
-		(jsonIdentFactor: int): Out;
+		(int: int): Out;
 	}
 	mirrors: {
 		(): java.util.List;
@@ -109,31 +109,31 @@ interface Out {
 	write: {
 		(bytes: number[]): Out;
 		(bytes: number[], off: int, len: int): Out;
-		(b: int): Out;
+		(int: int): Out;
 	}
 	writeBoolean: {
-		(b: boolean): Out;
+		(boolean: boolean): Out;
 	}
 	writeByte: {
-		(b: int): Out;
+		(int: int): Out;
 	}
 	writeChar: {
-		(c: char): Out;
+		(char: char): Out;
 	}
 	writeDouble: {
-		(d: double): Out;
+		(double: double): Out;
 	}
 	writeFloat: {
-		(f: float): Out;
+		(float: float): Out;
 	}
 	writeInt: {
-		(i: int): Out;
+		(int: int): Out;
 	}
 	writeLong: {
-		(l: long): Out;
+		(long: long): Out;
 	}
 	writeShort: {
-		(s: short): Out;
+		(boolean: short): Out;
 	}
 }
 declare const _out: Out;
