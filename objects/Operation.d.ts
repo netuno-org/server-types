@@ -91,6 +91,7 @@ interface Operation {
 		(column: string, order: string): Operation;
 	}
 	page: {
+		(page: int, size: int): Values;
 		(pagination: org.netuno.tritao.db.form.pagination.Pagination): Values;
 	}
 	populate: {

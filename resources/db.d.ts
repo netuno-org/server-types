@@ -136,6 +136,9 @@ interface DB {
 		(tableName: string, column: string): Relationship;
 		(tableName: string, column: string, where: Where): Relationship;
 	}
+	page: {
+		(page: int, pageSize: int): org.netuno.tritao.db.form.pagination.Pagination;
+	}
 	pagination: {
 		(page: int, pageSize: int): org.netuno.tritao.db.form.pagination.Pagination;
 	}

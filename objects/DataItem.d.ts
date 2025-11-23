@@ -11,11 +11,20 @@ interface DataItem {
 	getErrorTitle: {
 		(): string;
 	}
-	getField: {
+	getFieldName: {
+		(): string;
+	}
+	getFieldTitle: {
 		(): string;
 	}
 	getFirebaseValues: {
 		(): Values;
+	}
+	getFormName: {
+		(): string;
+	}
+	getFormTitle: {
+		(): string;
 	}
 	getId: {
 		(): string;
@@ -26,10 +35,10 @@ interface DataItem {
 	getRecord: {
 		(): Values;
 	}
-	getRelationItem: {
+	getRelationForm: {
 		(): Values;
 	}
-	getRelationTable: {
+	getRelationItem: {
 		(): Values;
 	}
 	getStatus: {
@@ -37,9 +46,6 @@ interface DataItem {
 	}
 	getStatusType: {
 		(): org.netuno.tritao.db.DataItem$StatusType;
-	}
-	getTable: {
-		(): string;
 	}
 	getUid: {
 		(): string;
@@ -86,6 +92,9 @@ interface DataItem {
 	isStatusAsInserted: {
 		(): boolean;
 	}
+	isStatusAsMandatory: {
+		(): boolean;
+	}
 	isStatusAsNone: {
 		(): boolean;
 	}
@@ -122,14 +131,23 @@ interface DataItem {
 	setErrorTitle: {
 		(errorTitle: string): DataItem;
 	}
-	setField: {
-		(field: string): DataItem;
+	setFieldName: {
+		(fieldName: string): DataItem;
+	}
+	setFieldTitle: {
+		(fieldTitle: string): DataItem;
 	}
 	setFirebase: {
 		(firebase: boolean): DataItem;
 	}
 	setFirebaseValues: {
 		(firebaseValues: Values): DataItem;
+	}
+	setFormName: {
+		(formName: string): DataItem;
+	}
+	setFormTitle: {
+		(formTitle: string): DataItem;
 	}
 	setId: {
 		(id: string): DataItem;
@@ -140,20 +158,17 @@ interface DataItem {
 	setRecord: {
 		(record: Values): void;
 	}
+	setRelationForm: {
+		(relationForm: Values): DataItem;
+	}
 	setRelationItem: {
 		(relationItem: Values): DataItem;
-	}
-	setRelationTable: {
-		(relationTable: Values): DataItem;
 	}
 	setStatus: {
 		(status: org.netuno.tritao.db.DataItem$Status): DataItem;
 	}
 	setStatusWithError: {
 		(): DataItem;
-	}
-	setTable: {
-		(table: string): DataItem;
 	}
 	setUid: {
 		(uid: string): DataItem;

@@ -19,6 +19,7 @@ export { default as _html } from './resources/html';
 export { default as _header } from './resources/header';
 export { default as _imap } from './resources/imap';
 export { default as _image } from './resources/image';
+export { default as _in } from './resources/in';
 export { default as _jwt } from './resources/jwt';
 export { default as _jasper } from './resources/jasper';
 export { default as _lang } from './resources/lang';

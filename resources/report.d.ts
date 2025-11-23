@@ -36,7 +36,7 @@ interface Report {
 		(formNameOrUid: string, nameOrUid: string): Values;
 		(formNameOrUid: string, data: Values): Values;
 	}
-	notNulls: {
+	mandatoryFields: {
 		(formId: int): java.util.List;
 		(formNameOrUid: string): java.util.List;
 	}

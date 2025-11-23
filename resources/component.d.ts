@@ -55,7 +55,7 @@ interface Component {
 	isRenderView: {
 		(): boolean;
 	}
-	renderDisplayName: {
+	renderTitle: {
 		(): void;
 	}
 }
