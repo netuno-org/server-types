@@ -1,3 +1,7 @@
+# 1.3.0 / 2025-11-23
+
+All sources are up to date.
+
 # 1.2.0 / 2025-08-17
 
 All sources are up to date.
