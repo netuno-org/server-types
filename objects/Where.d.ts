@@ -1,4 +1,5 @@
 import {java} from '../types';
+import ConditionalOperator from './ConditionalOperator';
 
 interface Where {
 	and: {
@@ -18,7 +19,7 @@ interface Where {
 		(value: java.lang.Object): Where;
 	}
 	getConditions: {
-		(): java.util.List;
+		(): ConditionalOperator[];
 	}
 	getTable: {
 		(): string;
@@ -42,6 +43,9 @@ interface Where {
 	lessThan: {
 		(value: java.lang.Object): Where;
 	}
+	notEquals: {
+		(value: java.lang.Object): Where;
+	}
 	notIn: {
 		(values: java.lang.Object[]): Where;
 		(values: java.lang.Object): Where;
@@ -51,7 +55,7 @@ interface Where {
 		(where: Where): Where;
 	}
 	setConditions: {
-		(conditions: java.util.List): Where;
+		(conditions: ConditionalOperator[]): Where;
 	}
 	setTable: {
 		(tableName: string): Where;

@@ -19,8 +19,8 @@ interface InputStream {
 	}
 	read: {
 		(): int;
-		(arg0: number[]): int;
-		(bytes: number[], off: int, length: int): int;
+		(arg0: byte[]): int;
+		(bytes: byte[], off: int, length: int): int;
 	}
 	readAll: {
 		(): string;
@@ -32,16 +32,16 @@ interface InputStream {
 		(): string;
 	}
 	readAllBytes: {
-		(): number[];
-		(input: InputStream): number[];
+		(): byte[];
+		(input: InputStream): byte[];
 	}
 	readAllBytesAndClose: {
-		(): number[];
+		(): byte[];
 	}
 	readAllBytesFromFile: {
-		(file: java.io.File): number[];
-		(file: string): number[];
-		(file: java.nio.file.Path): number[];
+		(file: java.io.File): byte[];
+		(file: string): byte[];
+		(file: java.nio.file.Path): byte[];
 	}
 	readFromFile: {
 		(path: java.io.File): string;
@@ -56,8 +56,8 @@ interface InputStream {
 		(input: InputStream): string;
 	}
 	readNBytes: {
-		(arg0: number[], arg1: int, arg2: int): int;
-		(arg0: int): number[];
+		(arg0: byte[], arg1: int, arg2: int): int;
+		(arg0: int): byte[];
 	}
 	readString: {
 		(): string;

@@ -11,8 +11,8 @@ interface DataSchema {
 		(o: java.lang.Object): Values;
 	}
 	addAll: {
-		(index: int, c: java.util.Collection): boolean;
-		(c: java.util.Collection): boolean;
+		(index: int, c: java.lang.Object[]): boolean;
+		(c: java.lang.Object[]): boolean;
 	}
 	as: {
 		(o: java.lang.Object): Values;
@@ -30,10 +30,14 @@ interface DataSchema {
 		(key: string, defaultValue: byte): byte;
 	}
 	asCalendar: {
+		(index: int): java.util.Calendar;
+		(index: int, defaultValue: java.util.Calendar): java.util.Calendar;
 		(key: string): java.util.Calendar;
 		(key: string, defaultValue: java.util.Calendar): java.util.Calendar;
 	}
 	asDate: {
+		(index: int): java.util.Date;
+		(index: int, defaultValue: java.util.Date): java.util.Date;
 		(key: string): java.util.Date;
 		(key: string, defaultValue: java.util.Date): java.util.Date;
 	}
@@ -44,6 +48,7 @@ interface DataSchema {
 		(key: string, defaultValue: double): double;
 	}
 	asFile: {
+		(index: int): File;
 		(key: string): File;
 	}
 	asFloat: {
@@ -59,6 +64,8 @@ interface DataSchema {
 		(key: string): string;
 	}
 	asInstant: {
+		(index: int): java.time.Instant;
+		(index: int, defaultValue: java.time.Instant): java.time.Instant;
 		(key: string): java.time.Instant;
 		(key: string, defaultValue: java.time.Instant): java.time.Instant;
 	}
@@ -68,24 +75,30 @@ interface DataSchema {
 		(key: string, defaultValue: short): int;
 	}
 	asList: {
-		(index: int): java.util.List;
-		(index: int, claz: java.lang.Class): java.util.List;
-		(index: int, defaultValue: java.lang.Object): java.util.List;
-		(index: int, defaultValue: java.lang.Object, claz: java.lang.Class): java.util.List;
-		(key: string): java.util.List;
-		(key: string, claz: java.lang.Class): java.util.List;
-		(key: string, defaultValue: java.lang.Object): java.util.List;
-		(key: string, defaultValue: java.lang.Object, claz: java.lang.Class): java.util.List;
+		(index: int): any[];
+		(index: int, claz: java.lang.Class): any[];
+		(index: int, defaultValue: java.lang.Object): any[];
+		(index: int, defaultValue: java.lang.Object, claz: java.lang.Class): any[];
+		(key: string): any[];
+		(key: string, claz: java.lang.Class): any[];
+		(key: string, defaultValue: java.lang.Object): any[];
+		(key: string, defaultValue: java.lang.Object, claz: java.lang.Class): any[];
 	}
 	asLocalDate: {
+		(index: int): java.time.LocalDate;
+		(index: int, defaultValue: java.time.LocalDate): java.time.LocalDate;
 		(key: string): java.time.LocalDate;
 		(key: string, defaultValue: java.time.LocalDate): java.time.LocalDate;
 	}
 	asLocalDateTime: {
+		(index: int): java.time.LocalDateTime;
+		(index: int, defaultValue: java.time.LocalDateTime): java.time.LocalDateTime;
 		(key: string): java.time.LocalDateTime;
 		(key: string, defaultValue: java.time.LocalDateTime): java.time.LocalDateTime;
 	}
 	asLocalTime: {
+		(index: int): java.time.LocalTime;
+		(index: int, defaultValue: java.time.LocalTime): java.time.LocalTime;
 		(key: string): java.time.LocalTime;
 		(key: string, defaultValue: java.time.LocalTime): java.time.LocalTime;
 	}
@@ -102,14 +115,20 @@ interface DataSchema {
 		(key: string, defaultValue: java.lang.Object): Values | DataSchema | java.util.Map;
 	}
 	asSQLDate: {
+		(index: int): java.sql.Date;
+		(index: int, defaultValue: java.sql.Date): java.sql.Date;
 		(key: string): java.sql.Date;
 		(key: string, defaultValue: java.sql.Date): java.sql.Date;
 	}
 	asSQLTime: {
+		(index: int): java.sql.Time;
+		(index: int, defaultValue: java.sql.Time): java.sql.Time;
 		(key: string): java.sql.Time;
 		(key: string, defaultValue: java.sql.Time): java.sql.Time;
 	}
 	asSQLTimestamp: {
+		(index: int): java.sql.Timestamp;
+		(index: int, defaultValue: java.sql.Timestamp): java.sql.Timestamp;
 		(key: string): java.sql.Timestamp;
 		(key: string, defaultValue: java.sql.Timestamp): java.sql.Timestamp;
 	}
@@ -142,6 +161,9 @@ interface DataSchema {
 		(key: string): Values;
 		(key: string, defaultValue: java.lang.Object): Values;
 	}
+	baseFile: {
+		(value: java.lang.Object, key: string, content: string): File;
+	}
 	clear: {
 		(): void;
 	}
@@ -149,20 +171,20 @@ interface DataSchema {
 		(): Values;
 	}
 	compute: {
-		(arg0: java.lang.Object, arg1: java.util.function.BiFunction): java.lang.Object;
+		(arg0: any, arg1: java.util.function.BiFunction): any;
 	}
 	computeIfAbsent: {
-		(arg0: java.lang.Object, arg1: java.util.function.Function): java.lang.Object;
+		(arg0: any, arg1: java.util.function.Function): any;
 	}
 	computeIfPresent: {
-		(arg0: java.lang.Object, arg1: java.util.function.BiFunction): java.lang.Object;
+		(arg0: any, arg1: java.util.function.BiFunction): any;
 	}
 	contains: {
 		(o: java.lang.Object): boolean;
 		(key: string, value: java.lang.Object): boolean;
 	}
 	containsAll: {
-		(c: java.util.Collection): boolean;
+		(c: any[]): boolean;
 	}
 	containsKey: {
 		(key: java.lang.Object): boolean;
@@ -174,7 +196,7 @@ interface DataSchema {
 		(jailPath: string): void;
 	}
 	entrySet: {
-		(): java.util.Set;
+		(): any[];
 	}
 	filter: {
 		(p: java.util.function.Predicate): Values;
@@ -205,7 +227,7 @@ interface DataSchema {
 		(key: int): java.lang.Object;
 		(key: java.lang.Object): java.lang.Object;
 		(key: string): java.lang.Object;
-		(key: string, type: java.lang.Class): java.lang.Object;
+		(key: string, type: java.lang.Class): any;
 	}
 	getBoolean: {
 		(index: int): boolean;
@@ -220,10 +242,14 @@ interface DataSchema {
 		(key: string, defaultValue: byte): byte;
 	}
 	getCalendar: {
+		(index: int): java.util.Calendar;
+		(index: int, defaultValue: java.util.Calendar): java.util.Calendar;
 		(key: string): java.util.Calendar;
 		(key: string, defaultValue: java.util.Calendar): java.util.Calendar;
 	}
 	getDate: {
+		(index: int): java.util.Date;
+		(index: int, defaultValue: java.util.Date): java.util.Date;
 		(key: string): java.util.Date;
 		(key: string, defaultValue: java.util.Date): java.util.Date;
 	}
@@ -234,6 +260,7 @@ interface DataSchema {
 		(key: string, defaultValue: double): double;
 	}
 	getFile: {
+		(index: int): File;
 		(key: string): File;
 	}
 	getFloat: {
@@ -255,6 +282,8 @@ interface DataSchema {
 		(key: string): string;
 	}
 	getInstant: {
+		(index: int): java.time.Instant;
+		(index: int, defaultValue: java.time.Instant): java.time.Instant;
 		(key: string): java.time.Instant;
 		(key: string, defaultValue: java.time.Instant): java.time.Instant;
 	}
@@ -265,27 +294,33 @@ interface DataSchema {
 		(key: string, defaultValue: int): int;
 	}
 	getKeys: {
-		(): java.util.Set;
+		(): java.lang.String[];
 	}
 	getList: {
-		(index: int): java.util.List;
-		(index: int, claz: java.lang.Class): java.util.List;
-		(index: int, defaultValue: java.lang.Object): java.util.List;
-		(index: int, defaultValue: java.lang.Object, claz: java.lang.Class): java.util.List;
-		(key: string): java.util.List;
-		(key: string, claz: java.lang.Class): java.util.List;
-		(key: string, defaultValue: java.lang.Object): java.util.List;
-		(key: string, defaultValue: java.lang.Object, claz: java.lang.Class): java.util.List;
+		(index: int): any[];
+		(index: int, claz: java.lang.Class): any[];
+		(index: int, defaultValue: java.lang.Object): any[];
+		(index: int, defaultValue: java.lang.Object, claz: java.lang.Class): any[];
+		(key: string): any[];
+		(key: string, claz: java.lang.Class): any[];
+		(key: string, defaultValue: java.lang.Object): any[];
+		(key: string, defaultValue: java.lang.Object, claz: java.lang.Class): any[];
 	}
 	getLocalDate: {
+		(index: int): java.time.LocalDate;
+		(index: int, defaultValue: java.time.LocalDate): java.time.LocalDate;
 		(key: string): java.time.LocalDate;
 		(key: string, defaultValue: java.time.LocalDate): java.time.LocalDate;
 	}
 	getLocalDateTime: {
+		(index: int): java.time.LocalDateTime;
+		(index: int, defaultValue: java.time.LocalDateTime): java.time.LocalDateTime;
 		(key: string): java.time.LocalDateTime;
 		(key: string, defaultValue: java.time.LocalDateTime): java.time.LocalDateTime;
 	}
 	getLocalTime: {
+		(index: int): java.time.LocalTime;
+		(index: int, defaultValue: java.time.LocalTime): java.time.LocalTime;
 		(key: string): java.time.LocalTime;
 		(key: string, defaultValue: java.time.LocalTime): java.time.LocalTime;
 	}
@@ -305,17 +340,23 @@ interface DataSchema {
 		(): string;
 	}
 	getOrDefault: {
-		(arg0: java.lang.Object, arg1: java.lang.Object): java.lang.Object;
+		(arg0: java.lang.Object, arg1: any): any;
 	}
 	getSQLDate: {
+		(index: int): java.sql.Date;
+		(index: int, defaultValue: java.sql.Date): java.sql.Date;
 		(key: string): java.sql.Date;
 		(key: string, defaultValue: java.sql.Date): java.sql.Date;
 	}
 	getSQLTime: {
+		(index: int): java.sql.Time;
+		(index: int, defaultValue: java.sql.Time): java.sql.Time;
 		(key: string): java.sql.Time;
 		(key: string, defaultValue: java.sql.Time): java.sql.Time;
 	}
 	getSQLTimestamp: {
+		(index: int): java.sql.Timestamp;
+		(index: int, defaultValue: java.sql.Timestamp): java.sql.Timestamp;
 		(key: string): java.sql.Timestamp;
 		(key: string, defaultValue: java.sql.Timestamp): java.sql.Timestamp;
 	}
@@ -355,7 +396,7 @@ interface DataSchema {
 		(key: string, defaultValue: java.util.UUID): java.util.UUID;
 	}
 	getValues: {
-		(): java.util.Collection;
+		(): any[];
 		(index: int): Values;
 		(index: int, defaultValue: java.lang.Object): Values;
 		(key: string): Values;
@@ -418,13 +459,13 @@ interface DataSchema {
 		(splitter: string): string;
 	}
 	keySet: {
-		(): java.util.Set;
+		(): java.lang.String[];
 	}
 	keys: {
-		(): java.util.Set;
+		(): java.lang.String[];
 	}
 	keysSorted: {
-		(): java.util.Set;
+		(): java.lang.String[];
 	}
 	keysToString: {
 		(splitter: string): string;
@@ -437,15 +478,15 @@ interface DataSchema {
 		(): int;
 	}
 	list: {
-		(): java.util.List;
-		(cls: java.lang.Class): java.util.List;
+		(): any[];
+		(cls: java.lang.Class): any[];
 	}
 	listIterator: {
 		(): java.util.ListIterator;
 		(index: int): java.util.ListIterator;
 	}
 	listOfValues: {
-		(): java.util.List;
+		(): Values[];
 	}
 	loadJSON: {
 		(input: InputStream): void;
@@ -467,7 +508,7 @@ interface DataSchema {
 	}
 	merge: {
 		(object: java.lang.Object): Values;
-		(arg0: java.lang.Object, arg1: java.lang.Object, arg2: java.util.function.BiFunction): java.lang.Object;
+		(arg0: any, arg1: any, arg2: java.util.function.BiFunction): any;
 	}
 	method: {
 		(): string;
@@ -480,9 +521,9 @@ interface DataSchema {
 		(): Values;
 	}
 	of: {
-		(array: java.lang.Object[]): Values;
+		(array: any[]): Values;
 		(o: java.lang.Object): java.lang.Object;
-		(list: java.util.List): Values;
+		(list: any[]): Values;
 		(map: Values | DataSchema | java.util.Map): Values;
 	}
 	ofList: {
@@ -506,7 +547,7 @@ interface DataSchema {
 		(m: Values | DataSchema | java.util.Map): void;
 	}
 	putIfAbsent: {
-		(arg0: java.lang.Object, arg1: java.lang.Object): java.lang.Object;
+		(arg0: any, arg1: any): any;
 	}
 	remove: {
 		(i: int): java.lang.Object;
@@ -515,11 +556,11 @@ interface DataSchema {
 	}
 	removeAll: {
 		(): void;
-		(c: java.util.Collection): boolean;
+		(c: java.lang.Object[]): boolean;
 	}
 	replace: {
-		(arg0: java.lang.Object, arg1: java.lang.Object): java.lang.Object;
-		(arg0: java.lang.Object, arg1: java.lang.Object, arg2: java.lang.Object): boolean;
+		(arg0: any, arg1: any): any;
+		(arg0: any, arg1: any, arg2: any): boolean;
 	}
 	replaceAll: {
 		(arg0: java.util.function.BiFunction): void;
@@ -527,7 +568,7 @@ interface DataSchema {
 		(func: org.graalvm.polyglot.Value): void;
 	}
 	retainAll: {
-		(c: java.util.Collection): boolean;
+		(c: java.lang.Object[]): boolean;
 	}
 	safeString: {
 		(object: java.lang.Object): string;
@@ -634,20 +675,20 @@ interface DataSchema {
 		(statusCode: int): DataSchema;
 	}
 	subList: {
-		(fromIndex: int, toIndex: int): java.util.List;
+		(fromIndex: int, toIndex: int): java.lang.Object[];
 	}
 	toArray: {
 		(): java.lang.Object[];
-		(a: java.lang.Object[]): java.lang.Object[];
+		(a: any[]): any[];
 	}
 	toByteArray: {
-		(): number[];
+		(): byte[];
 	}
 	toDoubleArray: {
-		(): number[];
+		(): double[];
 	}
 	toFloatArray: {
-		(): number[];
+		(): float[];
 	}
 	toFormMap: {
 		(): Values;
@@ -655,17 +696,17 @@ interface DataSchema {
 		(data: Values): Values;
 	}
 	toIntArray: {
-		(): number[];
+		(): int[];
 	}
 	toJSON: {
 		(): string;
 		(htmlEscape: boolean): string;
 		(htmlEscape: boolean, indentFactor: int): string;
 		(indentFactor: int): string;
-		(values: java.util.List): string;
-		(values: java.util.List, htmlEscape: boolean): string;
-		(values: java.util.List, htmlEscape: boolean, indentFactor: int): string;
-		(values: java.util.List, indentFactor: int): string;
+		(values: Values[]): string;
+		(values: Values[], htmlEscape: boolean): string;
+		(values: Values[], htmlEscape: boolean, indentFactor: int): string;
+		(values: Values[], indentFactor: int): string;
 	}
 	toJSONObject: {
 		(object: java.lang.Object, htmlEscape: boolean): java.lang.Object;
@@ -674,11 +715,11 @@ interface DataSchema {
 		(object: java.lang.Object, htmlEscape: boolean, indentFactor: int): string;
 	}
 	toList: {
-		(): java.util.List;
-		(cls: java.lang.Class): java.util.List;
+		(): any[];
+		(cls: java.lang.Class): any[];
 	}
 	toLongArray: {
-		(): number[];
+		(): long[];
 	}
 	toMap: {
 		(): Values | DataSchema | java.util.Map;
@@ -687,10 +728,10 @@ interface DataSchema {
 		(): string;
 	}
 	toShortArray: {
-		(): number[];
+		(): short[];
 	}
 	toStringArray: {
-		(): java.lang.String[];
+		(): string[];
 	}
 	typedForEach: {
 		(action: java.util.function.BiConsumer): void;
@@ -703,16 +744,16 @@ interface DataSchema {
 		(): void;
 	}
 	values: {
-		(): java.util.Collection;
+		(): java.lang.Object[];
 	}
 	valuesToString: {
 		(splitter: string): string;
-		(splitter: string, excludes: java.lang.String[]): string;
-		(splitter: string, excludes: java.lang.String[], config: Values): string;
+		(splitter: string, excludes: string[]): string;
+		(splitter: string, excludes: string[], config: Values): string;
 		(splitter: string, config: Values): string;
 		(map: Values | DataSchema | java.util.Map, splitter: string): string;
-		(map: Values | DataSchema | java.util.Map, splitter: string, excludes: java.lang.String[]): string;
-		(map: Values | DataSchema | java.util.Map, splitter: string, excludes: java.lang.String[], config: Values): string;
+		(map: Values | DataSchema | java.util.Map, splitter: string, excludes: string[]): string;
+		(map: Values | DataSchema | java.util.Map, splitter: string, excludes: string[], config: Values): string;
 		(map: Values | DataSchema | java.util.Map, splitter: string, config: Values): string;
 	}
 }

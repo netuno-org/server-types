@@ -4,7 +4,7 @@ import OutputStream from './OutputStream';
 
 interface File {
 	available: {
-		(): int;
+		(): long;
 	}
 	baseName: {
 		(): string;
@@ -18,7 +18,7 @@ interface File {
 		(charset: java.nio.charset.Charset): java.io.BufferedReader;
 	}
 	bytes: {
-		(): number[];
+		(): byte[];
 	}
 	contentType: {
 		(): string;
@@ -35,6 +35,9 @@ interface File {
 		(): boolean;
 	}
 	deleteAll: {
+		(): boolean;
+	}
+	deleteAllFiles: {
 		(): boolean;
 		(extension: string): boolean;
 	}
@@ -58,7 +61,7 @@ interface File {
 		(): string;
 	}
 	getBytes: {
-		(): number[];
+		(): byte[];
 	}
 	getContentType: {
 		(): string;
@@ -95,6 +98,9 @@ interface File {
 		(targetPath: java.io.File, fileName: string): string;
 		(targetPath: string, fileName: string): string;
 	}
+	inMemoryFile: {
+		(): boolean;
+	}
 	input: {
 		(): InputStream;
 	}
@@ -113,6 +119,9 @@ interface File {
 	isFile: {
 		(): boolean;
 	}
+	isInMemoryFile: {
+		(): boolean;
+	}
 	isJail: {
 		(): boolean;
 	}
@@ -120,7 +129,7 @@ interface File {
 		(): long;
 	}
 	list: {
-		(): java.util.List;
+		(): File[];
 	}
 	mkdir: {
 		(): boolean;
@@ -166,6 +175,18 @@ interface File {
 	}
 	setContentType: {
 		(contentType: string): File;
+	}
+	size: {
+		(): long;
+	}
+	sizeGB: {
+		(): double;
+	}
+	sizeKB: {
+		(): double;
+	}
+	sizeMB: {
+		(): double;
 	}
 	writer: {
 		(): java.io.Writer;

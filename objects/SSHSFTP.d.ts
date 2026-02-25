@@ -1,6 +1,7 @@
-import {java} from '../types';
+import {} from '../types';
 import OutputStream from './OutputStream';
 import File from './File';
+import SSHFile from './SSHFile';
 import InputStream from './InputStream';
 
 interface SSHSFTP {
@@ -27,7 +28,7 @@ interface SSHSFTP {
 		(remotePath: string, destination: File): SSHSFTP;
 	}
 	downloadBytes: {
-		(remotePath: string): number[];
+		(remotePath: string): byte[];
 	}
 	downloadText: {
 		(remotePath: string): string;
@@ -37,7 +38,7 @@ interface SSHSFTP {
 		(): boolean;
 	}
 	list: {
-		(remotePath: string): java.util.List;
+		(remotePath: string): SSHFile[];
 	}
 	size: {
 		(remotePath: string): long;
@@ -47,7 +48,7 @@ interface SSHSFTP {
 		(remotePath: string, source: File): SSHSFTP;
 	}
 	uploadBytes: {
-		(remotePath: string, bytes: number[]): SSHSFTP;
+		(remotePath: string, bytes: byte[]): SSHSFTP;
 	}
 	uploadText: {
 		(remotePath: string, text: string): SSHSFTP;

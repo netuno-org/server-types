@@ -15,7 +15,7 @@ interface SSHSCP {
 		(remotePath: string, destination: File): SSHSCP;
 	}
 	downloadBytes: {
-		(remotePath: string): number[];
+		(remotePath: string): byte[];
 	}
 	downloadText: {
 		(remotePath: string): string;
@@ -29,7 +29,7 @@ interface SSHSCP {
 		(remotePath: string, source: File): SSHSCP;
 	}
 	uploadBytes: {
-		(remotePath: string, bytes: number[]): SSHSCP;
+		(remotePath: string, bytes: byte[]): SSHSCP;
 	}
 	uploadText: {
 		(remotePath: string, text: string): SSHSCP;

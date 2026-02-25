@@ -1,4 +1,4 @@
-import {java, org} from '../types';
+import {org} from '../types';
 import Values from './Values';
 
 interface Column {
@@ -6,7 +6,7 @@ interface Column {
 		(table: string): Column;
 	}
 	coalesce: {
-		(params: java.lang.String[]): string;
+		(params: string[]): string;
 	}
 	columnDataType: {
 		(data: org.netuno.tritao.com.ComponentData): Column;

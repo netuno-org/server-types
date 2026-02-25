@@ -11,7 +11,7 @@ interface DBBatch {
 		(): void;
 	}
 	execute: {
-		(): number[];
+		(): int[];
 	}
 	put: {
 		(params: java.lang.Object[]): DBBatch;

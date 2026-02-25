@@ -1,10 +1,10 @@
-import {java, org} from '../types';
+import {org} from '../types';
 import Column from './Column';
 import Values from './Values';
 
 interface CheckExists {
 	coalesce: {
-		(params: java.lang.String[]): string;
+		(params: string[]): string;
 	}
 	column: {
 		(table: string, column: string): boolean;

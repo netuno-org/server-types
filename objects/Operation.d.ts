@@ -9,14 +9,14 @@ import Link from './Link';
 
 interface Operation {
 	all: {
-		(): java.util.List;
+		(): Values[];
 	}
 	debug: {
 		(enabled: boolean): Operation;
 	}
 	delete: {
 		(): Values;
-		(forms: java.lang.String[]): Values;
+		(forms: string[]): Values;
 	}
 	distinct: {
 		(enabled: boolean): Operation;
@@ -29,10 +29,10 @@ interface Operation {
 		(column: string, alias: string): Operation;
 	}
 	getFieldsToGet: {
-		(): java.util.List;
+		(): org.netuno.tritao.db.form.Field[];
 	}
 	getFieldsToSet: {
-		(): java.util.List;
+		(): org.netuno.tritao.db.form.Field[];
 	}
 	getFormName: {
 		(): string;
@@ -53,13 +53,13 @@ interface Operation {
 		(): org.netuno.tritao.db.form.pagination.Pagination;
 	}
 	getTablesToPopulate: {
-		(): java.util.List;
+		(): org.netuno.tritao.db.form.populate.Populate[];
 	}
 	getWhere: {
 		(): Where;
 	}
 	group: {
-		(order: java.lang.String[]): Operation;
+		(order: string[]): Operation;
 		(order: string): Operation;
 	}
 	insert: {
@@ -96,7 +96,7 @@ interface Operation {
 	}
 	populate: {
 		(table: string, filter: org.netuno.tritao.db.form.Field): Operation;
-		(table: string, filter: org.netuno.tritao.db.form.Field, fields: java.util.List): Operation;
+		(table: string, filter: org.netuno.tritao.db.form.Field, fields: org.netuno.tritao.db.form.Field[]): Operation;
 	}
 	rightJoin: {
 		(relation: Relationship): Operation;
@@ -111,10 +111,10 @@ interface Operation {
 		(enabled: boolean): Operation;
 	}
 	setFieldsToGet: {
-		(fields: java.util.List): Operation;
+		(fields: org.netuno.tritao.db.form.Field[]): Operation;
 	}
 	setFieldsToSet: {
-		(fieldsToSet: java.util.List): Operation;
+		(fieldsToSet: org.netuno.tritao.db.form.Field[]): Operation;
 	}
 	setFormName: {
 		(tableName: string): Operation;
@@ -135,7 +135,7 @@ interface Operation {
 		(pagination: org.netuno.tritao.db.form.pagination.Pagination): Operation;
 	}
 	setTablesToPopulate: {
-		(tablesToPopulate: java.util.List): Operation;
+		(tablesToPopulate: org.netuno.tritao.db.form.populate.Populate[]): Operation;
 	}
 	setWhere: {
 		(where: Where): Operation;

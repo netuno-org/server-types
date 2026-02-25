@@ -38,13 +38,13 @@ interface ProcessLauncher {
 		(err: OutputStream): ProcessLauncher;
 	}
 	execute: {
+		(command: string[]): ProcessResult;
 		(command: java.lang.String[]): ProcessResult;
-		(command: java.util.List): ProcessResult;
 		(command: Values): ProcessResult;
 	}
 	executeAsync: {
+		(command: string[]): ProcessResult;
 		(command: java.lang.String[]): ProcessResult;
-		(command: java.util.List): ProcessResult;
 		(command: Values): ProcessResult;
 	}
 	getAwait: {

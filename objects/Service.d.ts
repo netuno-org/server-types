@@ -7,9 +7,6 @@ interface Service {
 	cancel: {
 		(): void;
 	}
-	core: {
-		(file: string): boolean;
-	}
 	defaultEmptyOutput: {
 		(): void;
 	}
@@ -26,7 +23,7 @@ interface Service {
 		(): string;
 	}
 	getMethods: {
-		(): java.util.List;
+		(): java.lang.String[];
 	}
 	getPath: {
 		(): string;
@@ -56,11 +53,14 @@ interface Service {
 	path: {
 		(): string;
 	}
+	runCoreScript: {
+		(proteu: org.netuno.proteu.Proteu, hili: org.netuno.tritao.hili.Hili, file: string): boolean;
+	}
 	setNotFoundDefaultError: {
 		(value: boolean): void;
 	}
 	wasCancelled: {
-		(): java.lang.Boolean;
+		(): boolean;
 	}
 }
 export default Service;

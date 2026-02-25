@@ -1,18 +1,24 @@
 import {java, org} from '../types';
 
 interface ScriptResult {
+	error: {
+		(): java.lang.Throwable;
+	}
+	get: {
+		(): java.lang.Object;
+	}
 	isError: {
 		(): boolean;
 	}
 	isSuccess: {
 		(): boolean;
 	}
-	whenError: {
+	onError: {
 		(func: java.util.function.Consumer): ScriptResult;
 		(func: org.graalvm.polyglot.Value): ScriptResult;
 	}
-	whenSucceed: {
-		(func: java.lang.Runnable): ScriptResult;
+	onSuccess: {
+		(func: java.util.function.Consumer): ScriptResult;
 		(func: org.graalvm.polyglot.Value): ScriptResult;
 	}
 }

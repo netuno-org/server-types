@@ -2,13 +2,13 @@ import {java} from '../types';
 
 interface RandomString {
 	chars: {
-		(): string[];
+		(): char[];
 	}
 	charsString: {
 		(): string;
 	}
 	getChars: {
-		(): string[];
+		(): char[];
 	}
 	getCharsString: {
 		(): string;
@@ -29,7 +29,7 @@ interface RandomString {
 		(): java.util.Random;
 	}
 	setChars: {
-		(symbols: string[]): RandomString;
+		(symbols: char[]): RandomString;
 		(chars: string): RandomString;
 	}
 	setRandom: {

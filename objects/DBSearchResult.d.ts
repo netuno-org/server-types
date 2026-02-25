@@ -1,4 +1,5 @@
-import {java} from '../types';
+import {} from '../types';
+import Values from './Values';
 
 interface DBSearchResult {
 	getFullTotal: {
@@ -11,7 +12,7 @@ interface DBSearchResult {
 		(): int;
 	}
 	getResults: {
-		(): java.util.List;
+		(): Values[];
 	}
 	getTotal: {
 		(): int;
@@ -26,7 +27,7 @@ interface DBSearchResult {
 		(offset: int): DBSearchResult;
 	}
 	setResults: {
-		(results: java.util.List): DBSearchResult;
+		(results: Values[]): DBSearchResult;
 	}
 	setTotal: {
 		(total: int): DBSearchResult;

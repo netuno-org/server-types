@@ -4,7 +4,7 @@ import File from './File';
 
 interface RemoteResponse {
 	bytes: {
-		(): number[];
+		(): byte[];
 	}
 	content: {
 		(): java.lang.Object;
@@ -27,7 +27,7 @@ interface RemoteResponse {
 		(dataSent: Values): org.netuno.psamata.net.Remote$Response;
 	}
 	getBytes: {
-		(): number[];
+		(): byte[];
 	}
 	getContent: {
 		(): java.lang.Object;
@@ -105,7 +105,7 @@ interface RemoteResponse {
 		(qs: Values): org.netuno.psamata.net.Remote$Response;
 	}
 	setBytes: {
-		(bytes: number[]): RemoteResponse;
+		(bytes: byte[]): RemoteResponse;
 	}
 	setContent: {
 		(content: java.lang.Object): RemoteResponse;

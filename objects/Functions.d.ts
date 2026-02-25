@@ -1,4 +1,4 @@
-import {java} from '../types';
+import {java, org} from '../types';
 
 interface Functions {
 	add: {
@@ -15,10 +15,10 @@ interface Functions {
 		(): java.lang.Object;
 	}
 	getMetrics: {
-		(): java.util.List;
+		(): org.netuno.tritao.resource.Exec$Functions$Metric[];
 	}
 	metrics: {
-		(): java.util.List;
+		(): org.netuno.tritao.resource.Exec$Functions$Metric[];
 	}
 	setAtEnd: {
 		(end: java.util.function.Function): Functions;

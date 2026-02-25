@@ -17,7 +17,7 @@ interface OutputStream {
 		(): int;
 	}
 	getMirrors: {
-		(): java.util.List;
+		(): OutputStream[];
 	}
 	getNotify: {
 		(): org.netuno.psamata.io.OutputStreamNotify;
@@ -26,6 +26,9 @@ interface OutputStream {
 		(): boolean;
 	}
 	isEnabled: {
+		(): boolean;
+	}
+	isStarted: {
 		(): boolean;
 	}
 	nullOutputStream: {
@@ -81,21 +84,21 @@ interface OutputStream {
 		(v: long): OutputStream;
 		(v: short): OutputStream;
 	}
+	restart: {
+		(): OutputStream;
+	}
 	setEnabled: {
 		(enabled: boolean): OutputStream;
 	}
 	setNotify: {
 		(outputNotify: org.netuno.psamata.io.OutputStreamNotify): OutputStream;
 	}
-	setStart: {
-		(v: boolean): OutputStream;
-	}
 	start: {
 		(): OutputStream;
 	}
 	write: {
-		(b: number[]): void;
-		(bytes: number[], off: int, leng: int): void;
+		(b: byte[]): void;
+		(bytes: byte[], off: int, leng: int): void;
 		(b: int): void;
 	}
 	writeAndClose: {
@@ -149,9 +152,9 @@ interface OutputStream {
 		(v: short): OutputStream;
 	}
 	writeToFile: {
-		(bytes: number[], path: java.io.File, append: boolean): void;
-		(bytes: number[], path: string, append: boolean): void;
-		(bytes: number[], path: java.nio.file.Path, append: boolean): void;
+		(bytes: byte[], path: java.io.File, append: boolean): void;
+		(bytes: byte[], path: string, append: boolean): void;
+		(bytes: byte[], path: java.nio.file.Path, append: boolean): void;
 		(content: string, path: java.io.File, append: boolean): void;
 		(content: string, path: string, append: boolean): void;
 		(content: string, path: java.nio.file.Path, append: boolean): void;
