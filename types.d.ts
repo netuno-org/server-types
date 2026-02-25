@@ -104,10 +104,8 @@ export declare namespace java.lang {
 	export type Object = any;
 	export type Class = any;
 	export type String = any;
-	export type Boolean = any;
 	export type Throwable = any;
 	export type StackTraceElement = any;
-	export type Runnable = any;
 	export type Error = any;
 	export type Exception = any;
 	export type CharSequence = any;
@@ -169,19 +167,17 @@ export declare namespace java.time.temporal {
 	export type ValueRange = any;
 }
 export declare namespace java.util {
-	export type Collection = any;
 	export type Calendar = any;
 	export type Date = any;
-	export type List = any;
 	export type Map = any;
 	export type UUID = any;
-	export type Set = any;
 	export type Iterator = any;
 	export type ListIterator = any;
 	export type Properties = any;
 	export type Comparator = any;
 	export type Spliterator = any;
 	export type Random = any;
+	export type List = any;
 	export type Locale = any;
 	export type GregorianCalendar = any;
 	export type TimeZone = any;
@@ -290,6 +286,9 @@ export declare namespace org.netuno.tritao.db.form.join {
 export declare namespace org.netuno.tritao.db.form.pagination {
 	export type Pagination = any;
 }
+export declare namespace org.netuno.tritao.db.form.populate {
+	export type Populate = any;
+}
 export declare namespace org.netuno.tritao.db.form.where {
 	export type ConditionalOperatorType = any;
 	export type RelationalOperatorType = any;
@@ -302,6 +301,7 @@ export declare namespace org.netuno.tritao.hili {
 	export type Hili = any;
 }
 export declare namespace org.netuno.tritao.resource {
+	export type Exec$Functions$Metric = any;
 	export type Setup$RunResult = any;
 }
 export declare namespace org.w3c.dom {
