@@ -1,3 +1,7 @@
+# 1.4.0 / 2026-02-25
+
+Lists with generics become arrays, and all sources are up to date.
+
 # 1.3.0 / 2025-11-23
 
 All sources are up to date.
