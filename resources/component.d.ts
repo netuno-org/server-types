@@ -1,4 +1,4 @@
-import {java, org} from '../types';
+import {org} from '../types';
 import Values from '../objects/Values';
 
 interface Component {
@@ -14,7 +14,7 @@ interface Component {
 		(): org.netuno.tritao.com.Configuration;
 	}
 	getDataStructure: {
-		(): java.util.List;
+		(): org.netuno.tritao.com.ComponentData[];
 	}
 	getDesignData: {
 		(): Values;

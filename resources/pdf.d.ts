@@ -1,4 +1,4 @@
-import {com, java, org} from '../types';
+import {com, org} from '../types';
 import InputStream from '../objects/InputStream';
 import Values from '../objects/Values';
 import File from '../objects/File';
@@ -165,7 +165,7 @@ interface PDF {
 		(document: com.itextpdf.layout.Document): PDF;
 	}
 	string: {
-		(text: number[]): com.itextpdf.kernel.pdf.PdfString;
+		(text: byte[]): com.itextpdf.kernel.pdf.PdfString;
 		(text: string): com.itextpdf.kernel.pdf.PdfString;
 		(text: string, encoding: string): com.itextpdf.kernel.pdf.PdfString;
 	}
@@ -173,15 +173,15 @@ interface PDF {
 		(): com.itextpdf.layout.Style;
 	}
 	table: {
-		(columns: number[]): com.itextpdf.layout.element.Table;
-		(columnWidth: number[], largeTable: boolean): com.itextpdf.layout.element.Table;
-		(columns: number[]): com.itextpdf.layout.element.Table;
-		(columnWidth: number[], largeTable: boolean): com.itextpdf.layout.element.Table;
-		(columns: number[]): com.itextpdf.layout.element.Table;
-		(columnWidth: number[], largeTable: boolean): com.itextpdf.layout.element.Table;
+		(columns: double[]): com.itextpdf.layout.element.Table;
+		(columnWidth: double[], largeTable: boolean): com.itextpdf.layout.element.Table;
+		(columns: float[]): com.itextpdf.layout.element.Table;
+		(columnWidth: float[], largeTable: boolean): com.itextpdf.layout.element.Table;
+		(columns: int[]): com.itextpdf.layout.element.Table;
+		(columnWidth: int[], largeTable: boolean): com.itextpdf.layout.element.Table;
 		(columns: int): com.itextpdf.layout.element.Table;
-		(columnWidth: java.util.List): com.itextpdf.layout.element.Table;
-		(columnWidth: java.util.List, largeTable: boolean): com.itextpdf.layout.element.Table;
+		(columnWidth: any[]): com.itextpdf.layout.element.Table;
+		(columnWidth: any[], largeTable: boolean): com.itextpdf.layout.element.Table;
 		(columnWidth: Values): com.itextpdf.layout.element.Table;
 		(columnWidth: Values, largeTable: boolean): com.itextpdf.layout.element.Table;
 	}
@@ -230,11 +230,11 @@ interface PDF {
 		(source: typeof _storage, destinationPath: typeof _storage, filePrefixName: string, fileExtension: string, dpi: int): void;
 	}
 	toImageAsByteArray: {
-		(input: InputStream, startPage: int, endPage: int, fileExtension: string, dpi: int): [[B;
-		(input: InputStream, pageNumber: int, fileExtension: string): [[B;
-		(input: InputStream, pageNumber: int, fileExtension: string, dpi: int): [[B;
-		(input: InputStream, fileExtension: string): [[B;
-		(input: InputStream, fileExtension: string, dpi: int): [[B;
+		(input: InputStream, startPage: int, endPage: int, fileExtension: string, dpi: int): any[];
+		(input: InputStream, pageNumber: int, fileExtension: string): any[];
+		(input: InputStream, pageNumber: int, fileExtension: string, dpi: int): any[];
+		(input: InputStream, fileExtension: string): any[];
+		(input: InputStream, fileExtension: string, dpi: int): any[];
 	}
 	toText: {
 		(content: InputStream): string;

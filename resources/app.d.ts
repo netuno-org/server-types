@@ -27,6 +27,9 @@ interface App {
 	getName: {
 		(): string;
 	}
+	getPath: {
+		(path: string): File;
+	}
 	getPathBase: {
 		(): string;
 	}
@@ -87,6 +90,9 @@ interface App {
 	}
 	name: {
 		(): string;
+	}
+	path: {
+		(path: string): File;
 	}
 	pathBase: {
 		(): string;

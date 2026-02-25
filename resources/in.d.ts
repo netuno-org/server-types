@@ -18,7 +18,7 @@ interface In {
 	}
 	read: {
 		(): int;
-		(bytes: number[], off: int, length: int): int;
+		(bytes: byte[], off: int, length: int): int;
 	}
 	readAll: {
 		(): string;
@@ -27,10 +27,10 @@ interface In {
 		(): string;
 	}
 	readAllBytes: {
-		(): number[];
+		(): byte[];
 	}
 	readAllBytesAndClose: {
-		(): number[];
+		(): byte[];
 	}
 	readLine: {
 		(): string;

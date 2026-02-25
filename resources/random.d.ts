@@ -8,7 +8,7 @@ interface Random {
 	}
 	initSecure: {
 		(): java.security.SecureRandom;
-		(seed: number[]): java.security.SecureRandom;
+		(seed: byte[]): java.security.SecureRandom;
 	}
 	initString: {
 		(): RandomString;

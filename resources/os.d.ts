@@ -18,6 +18,9 @@ interface OS {
 	getName: {
 		(): string;
 	}
+	getPath: {
+		(path: string): File;
+	}
 	init: {
 		(): OS;
 	}
@@ -44,6 +47,9 @@ interface OS {
 	}
 	name: {
 		(): string;
+	}
+	path: {
+		(path: string): File;
 	}
 }
 declare const _os: OS;

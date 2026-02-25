@@ -19,39 +19,39 @@ interface Crypto {
 		(content: int, secureRandom: java.security.SecureRandom): string;
 	}
 	cryptHash: {
-		(content: number[]): string;
-		(content: number[], salt: string): string;
+		(content: byte[]): string;
+		(content: byte[], salt: string): string;
 		(content: string): string;
 		(content: string, salt: string): string;
 	}
 	desDecode: {
-		(content: string, data: number[]): string;
-		(content: string, data: number[], charset: string): string;
+		(content: string, data: byte[]): string;
+		(content: string, data: byte[], charset: string): string;
 	}
 	desDecodeBase64: {
 		(content: string, data: string, charset: string): string;
 	}
 	desEncode: {
-		(key: string, content: string): number[];
-		(key: string, content: string, charset: string): number[];
+		(key: string, content: string): byte[];
+		(key: string, content: string, charset: string): byte[];
 	}
 	desEncodeBase64: {
 		(key: string, content: string, charset: string): string;
 	}
 	hmac256: {
-		(key: number[], content: number[]): number[];
-		(key: string, content: string): number[];
+		(key: byte[], content: byte[]): byte[];
+		(key: string, content: string): byte[];
 	}
 	hmac256Base64: {
-		(key: number[], content: number[]): string;
+		(key: byte[], content: byte[]): string;
 		(key: string, content: string): string;
 	}
 	hmac256Hex: {
-		(key: number[], content: number[]): string;
+		(key: byte[], content: byte[]): string;
 		(key: string, content: string): string;
 	}
 	md5: {
-		(content: string): number[];
+		(content: string): byte[];
 	}
 	md5Base64: {
 		(content: string): string;
@@ -60,28 +60,28 @@ interface Crypto {
 		(content: string): string;
 	}
 	sha256: {
-		(content: number[]): string;
+		(content: byte[]): string;
 		(content: string): string;
 	}
 	sha256AsBytes: {
-		(content: number[]): number[];
-		(content: string): number[];
+		(content: byte[]): byte[];
+		(content: string): byte[];
 	}
 	sha384: {
-		(content: number[]): string;
+		(content: byte[]): string;
 		(content: string): string;
 	}
 	sha384AsBytes: {
-		(content: number[]): number[];
-		(content: string): number[];
+		(content: byte[]): byte[];
+		(content: string): byte[];
 	}
 	sha512: {
-		(content: number[]): string;
+		(content: byte[]): string;
 		(content: string): string;
 	}
 	sha512AsBytes: {
-		(content: number[]): number[];
-		(content: string): number[];
+		(content: byte[]): byte[];
+		(content: string): byte[];
 	}
 }
 declare const _crypto: Crypto;

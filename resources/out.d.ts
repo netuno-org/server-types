@@ -1,9 +1,9 @@
 import {java} from '../types';
 import InputStream from '../objects/InputStream';
 import File from '../objects/File';
+import OutputStream from '../objects/OutputStream';
 import Values from '../objects/Values';
 import DataSchema from '../objects/DataSchema';
-import OutputStream from '../objects/OutputStream';
 import _storage from './storage';
 
 interface Out {
@@ -34,7 +34,7 @@ interface Out {
 		(): int;
 	}
 	getMirrors: {
-		(): java.util.List;
+		(): OutputStream[];
 	}
 	init: {
 		(): Out;
@@ -48,7 +48,7 @@ interface Out {
 	json: {
 		(Values: java.lang.Object): Out;
 		(String: string): Out;
-		(Values: java.util.List): Out;
+		(Values: Values[]): Out;
 		(Values: Values | DataSchema | java.util.Map): Out;
 		(Values: Values): Out;
 	}
@@ -61,7 +61,7 @@ interface Out {
 		(int: int): Out;
 	}
 	mirrors: {
-		(): java.util.List;
+		(): OutputStream[];
 	}
 	output: {
 		(): OutputStream;
@@ -107,8 +107,8 @@ interface Out {
 		(): boolean;
 	}
 	write: {
-		(bytes: number[]): Out;
-		(bytes: number[], off: int, len: int): Out;
+		(bytes: byte[]): Out;
+		(bytes: byte[], off: int, len: int): Out;
 		(int: int): Out;
 	}
 	writeBoolean: {

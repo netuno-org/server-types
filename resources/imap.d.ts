@@ -1,4 +1,4 @@
-import {java, org} from '../types';
+import {org} from '../types';
 import IMAPConfig from '../objects/IMAPConfig';
 import Values from '../objects/Values';
 import _smtp from './smtp';
@@ -40,8 +40,8 @@ interface IMAP {
 		(position: int): org.netuno.psamata.mail.Mail;
 	}
 	mails: {
-		(): java.util.List;
-		(start: int, start: int): java.util.List;
+		(): org.netuno.psamata.mail.Mail[];
+		(start: int, start: int): org.netuno.psamata.mail.Mail[];
 	}
 	newSize: {
 		(): int;

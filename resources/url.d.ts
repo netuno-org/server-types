@@ -38,7 +38,7 @@ interface URL {
 		(): string;
 	}
 	split: {
-		(regex: string): java.lang.String[];
+		(regex: string): string[];
 	}
 	startsWith: {
 		(string: string): boolean;

@@ -3,7 +3,7 @@ import Values from '../objects/Values';
 
 interface Report {
 	all: {
-		(): java.util.List;
+		(): Values[];
 	}
 	create: {
 		(data: Values): boolean;
@@ -25,8 +25,8 @@ interface Report {
 		(data: Values): Values;
 	}
 	getAllComponents: {
-		(formId: int): java.util.List;
-		(formNameOrUid: string): java.util.List;
+		(formId: int): Values[];
+		(formNameOrUid: string): Values[];
 	}
 	getComponent: {
 		(formId: int, id: int): Values;
@@ -37,8 +37,8 @@ interface Report {
 		(formNameOrUid: string, data: Values): Values;
 	}
 	mandatoryFields: {
-		(formId: int): java.util.List;
-		(formNameOrUid: string): java.util.List;
+		(formId: int): java.lang.String[];
+		(formNameOrUid: string): java.lang.String[];
 	}
 }
 declare const _report: Report;

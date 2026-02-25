@@ -10,7 +10,7 @@ interface WS {
 		(): boolean;
 	}
 	binaryStreamed: {
-		(): number[];
+		(): byte[];
 	}
 	broadcast: {
 		(endpointName: string, data: Values): void;
@@ -20,8 +20,8 @@ interface WS {
 		(endpointName: string, message: Values): void;
 	}
 	broadcastBinary: {
-		(endpointName: string, content: number[]): void;
-		(endpointName: string, path: string, content: number[]): void;
+		(endpointName: string, content: byte[]): void;
+		(endpointName: string, path: string, content: byte[]): void;
 	}
 	broadcastService: {
 		(endpointName: string, path: string, message: Values): boolean;
@@ -139,8 +139,8 @@ interface WS {
 		(message: Values): boolean;
 	}
 	sendBinary: {
-		(content: number[]): boolean;
-		(sessionId: string, content: number[]): boolean;
+		(content: byte[]): boolean;
+		(sessionId: string, content: byte[]): boolean;
 	}
 	sendService: {
 		(sessionId: string, message: Values): boolean;

@@ -6,6 +6,14 @@ interface Auth {
 	allProvidersConfig: {
 		(): Values;
 	}
+	altchaAdminEnabled: {
+		(): boolean;
+		(enabled: boolean): Auth;
+	}
+	altchaEnabled: {
+		(): boolean;
+		(enabled: boolean): Auth;
+	}
 	attempt: {
 		(): boolean;
 	}
@@ -15,9 +23,13 @@ interface Auth {
 	}
 	attemptRejectWithData: {
 		(): Values;
-		(data: java.util.List): Auth;
+		(data: any[]): Auth;
 		(data: Values | DataSchema | java.util.Map): Auth;
 		(data: Values): Auth;
+	}
+	attemptsEnabled: {
+		(): boolean;
+		(attemptsEnabled: boolean): Auth;
 	}
 	attemptsInterval: {
 		(): int;
@@ -43,7 +55,19 @@ interface Auth {
 	getAttemptRejectWithData: {
 		(data: Values): Values;
 	}
+	getJWTAccessExpires: {
+		(): int;
+	}
 	getJWTGroups: {
+		(): Values;
+	}
+	getJWTKey: {
+		(): javax.crypto.SecretKey;
+	}
+	getJWTRefreshExpires: {
+		(): int;
+	}
+	getJWTSignInData: {
 		(): Values;
 	}
 	getProviderConfig: {
@@ -58,11 +82,23 @@ interface Auth {
 	isAdmin: {
 		(): boolean;
 	}
+	isAltchaAdminEnabled: {
+		(): boolean;
+	}
+	isAltchaEnabled: {
+		(): boolean;
+	}
 	isAttempt: {
 		(): boolean;
 	}
 	isAttemptReject: {
 		(): boolean;
+	}
+	isAttemptsEnabled: {
+		(): boolean;
+	}
+	isAttemptsInterval: {
+		(): int;
 	}
 	isAuthenticated: {
 		(): boolean;
@@ -71,6 +107,9 @@ interface Auth {
 		(): boolean;
 	}
 	isJWT: {
+		(): boolean;
+	}
+	isJWTEnabled: {
 		(): boolean;
 	}
 	isProviderEnabled: {
@@ -145,24 +184,42 @@ interface Auth {
 	providerEnabled: {
 		(providerCode: string): boolean;
 	}
+	setAltchaAdminEnabled: {
+		(enabled: boolean): Auth;
+	}
+	setAltchaEnabled: {
+		(enabled: boolean): Auth;
+	}
 	setAttemptReject: {
 		(reject: boolean): Auth;
 	}
 	setAttemptRejectWithData: {
-		(data: java.util.List): Auth;
+		(data: any[]): Auth;
 		(data: Values | DataSchema | java.util.Map): Auth;
 		(data: Values): Auth;
+	}
+	setAttemptsEnabled: {
+		(enabled: boolean): Auth;
+	}
+	setAttemptsInterval: {
+		(attemptsInterval: int): Auth;
+	}
+	setJWTEnabled: {
+		(enabled: boolean): Auth;
+	}
+	setJWTSignIn: {
+		(userId: int, contextData: Values): Auth;
 	}
 	setSignInAbort: {
 		(abort: boolean): Auth;
 	}
 	setSignInAbortWithData: {
-		(data: java.util.List): Auth;
+		(data: any[]): Auth;
 		(data: Values | DataSchema | java.util.Map): Auth;
 		(data: Values): Auth;
 	}
 	setSignInExtraData: {
-		(data: java.util.List): Auth;
+		(data: any[]): Auth;
 		(data: Values | DataSchema | java.util.Map): Auth;
 		(data: Values): Auth;
 	}
@@ -172,13 +229,13 @@ interface Auth {
 	}
 	signInAbortWithData: {
 		(): Values;
-		(data: java.util.List): Auth;
+		(data: any[]): Auth;
 		(data: Values | DataSchema | java.util.Map): Auth;
 		(data: Values): Auth;
 	}
 	signInExtraData: {
 		(): Values;
-		(data: java.util.List): Auth;
+		(data: any[]): Auth;
 		(data: Values | DataSchema | java.util.Map): Auth;
 		(data: Values): Auth;
 	}

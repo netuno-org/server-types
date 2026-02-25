@@ -1,8 +1,9 @@
-import {java, org} from '../types';
+import {org} from '../types';
 import FTPConfig from '../objects/FTPConfig';
 import Values from '../objects/Values';
 import OutputStream from '../objects/OutputStream';
 import File from '../objects/File';
+import FTPFile from '../objects/FTPFile';
 import InputStream from '../objects/InputStream';
 import _storage from './storage';
 
@@ -45,7 +46,7 @@ interface FTP {
 		(remotePath: string, destination: typeof _storage): FTP;
 	}
 	downloadBytes: {
-		(remotePath: string): number[];
+		(remotePath: string): byte[];
 	}
 	downloadText: {
 		(remotePath: string): string;
@@ -73,7 +74,7 @@ interface FTP {
 		(): boolean;
 	}
 	list: {
-		(remotePath: string): java.util.List;
+		(remotePath: string): FTPFile[];
 	}
 	rename: {
 		(oldPath: string, newPath: string): FTP;
@@ -97,7 +98,7 @@ interface FTP {
 		(remotePath: string, source: typeof _storage): FTP;
 	}
 	uploadBytes: {
-		(remotePath: string, bytes: number[]): FTP;
+		(remotePath: string, bytes: byte[]): FTP;
 	}
 	uploadText: {
 		(remotePath: string, text: string): FTP;

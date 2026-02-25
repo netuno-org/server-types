@@ -10,8 +10,8 @@ interface Storage {
 	database: {
 		(table: string): Storage;
 		(table: string, field: string): Storage;
-		(table: string, field: string, path: string): Storage;
-		(table: string, field: string, path: string, fileName: string): Storage;
+		(table: string, field: string, subpath: string): Storage;
+		(table: string, field: string, subpath: string, fileName: string): Storage;
 	}
 	ensurePath: {
 		(): Storage;
@@ -23,8 +23,8 @@ interface Storage {
 		(): File;
 	}
 	filesystem: {
-		(folder: string, path: string): Storage;
-		(folder: string, path: string, fileName: string): Storage;
+		(folder: string, subpath: string): Storage;
+		(folder: string, subpath: string, fileName: string): Storage;
 	}
 	folder: {
 		(): File;
@@ -57,7 +57,7 @@ interface Storage {
 		(): boolean;
 	}
 	isExtension: {
-		(charset: string): boolean;
+		(extension: string): boolean;
 	}
 	isFile: {
 		(): boolean;
@@ -78,7 +78,7 @@ interface Storage {
 		(): boolean;
 	}
 	newRandomFile: {
-		(charset: string): Storage;
+		(extension: string): Storage;
 	}
 	output: {
 		(): OutputStream;
@@ -87,7 +87,7 @@ interface Storage {
 		(): OutputStream;
 	}
 	path: {
-		(): string;
+		(): File;
 	}
 	reader: {
 		(): java.io.Reader;
@@ -101,6 +101,9 @@ interface Storage {
 	}
 	setBase: {
 		(base: string): boolean;
+	}
+	subpath: {
+		(): string;
 	}
 	url: {
 		(): string;

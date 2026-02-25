@@ -9,10 +9,10 @@ import _storage from './storage';
 interface Image {
 	affineTransform: {
 		(): java.awt.geom.AffineTransform;
-		(tx: number[]): java.awt.geom.AffineTransform;
+		(tx: double[]): java.awt.geom.AffineTransform;
 		(m00: double, m10: double, m01: double, m11: double, m02: double, m12: double): java.awt.geom.AffineTransform;
 		(tx: java.awt.geom.AffineTransform): java.awt.geom.AffineTransform;
-		(tx: java.util.List): java.awt.geom.AffineTransform;
+		(tx: any[]): java.awt.geom.AffineTransform;
 		(tx: Values): java.awt.geom.AffineTransform;
 	}
 	affineTransformType: {
@@ -84,16 +84,16 @@ interface Image {
 		(color: java.awt.Color, x: int, y: int, width: int, height: int): Image;
 	}
 	drawPolygon: {
-		(color: java.awt.Color, xPoints: number[], yPoints: number[], nPoints: int): Image;
-		(color: java.awt.Color, xPoints: java.util.List, yPoints: java.util.List): Image;
-		(color: java.awt.Color, xPoints: java.util.List, yPoints: java.util.List, nPoints: int): Image;
+		(color: java.awt.Color, xPoints: int[], yPoints: int[], nPoints: int): Image;
+		(color: java.awt.Color, xPoints: any[], yPoints: any[]): Image;
+		(color: java.awt.Color, xPoints: any[], yPoints: any[], nPoints: int): Image;
 		(color: java.awt.Color, xPoints: Values, yPoints: Values): Image;
 		(color: java.awt.Color, xPoints: Values, yPoints: Values, nPoints: int): Image;
 	}
 	drawPolyline: {
-		(color: java.awt.Color, xPoints: number[], yPoints: number[], nPoints: int): Image;
-		(color: java.awt.Color, xPoints: java.util.List, yPoints: java.util.List): Image;
-		(color: java.awt.Color, xPoints: java.util.List, yPoints: java.util.List, nPoints: int): Image;
+		(color: java.awt.Color, xPoints: int[], yPoints: int[], nPoints: int): Image;
+		(color: java.awt.Color, xPoints: any[], yPoints: any[]): Image;
+		(color: java.awt.Color, xPoints: any[], yPoints: any[], nPoints: int): Image;
 		(color: java.awt.Color, xPoints: Values, yPoints: Values): Image;
 		(color: java.awt.Color, xPoints: Values, yPoints: Values, nPoints: int): Image;
 	}
@@ -123,9 +123,9 @@ interface Image {
 		(color: java.awt.Color, x: int, y: int, width: int, height: int): Image;
 	}
 	fillPolygon: {
-		(color: java.awt.Color, xPoints: number[], yPoints: number[], nPoints: int): Image;
-		(color: java.awt.Color, xPoints: java.util.List, yPoints: java.util.List): Image;
-		(color: java.awt.Color, xPoints: java.util.List, yPoints: java.util.List, nPoints: int): Image;
+		(color: java.awt.Color, xPoints: int[], yPoints: int[], nPoints: int): Image;
+		(color: java.awt.Color, xPoints: any[], yPoints: any[]): Image;
+		(color: java.awt.Color, xPoints: any[], yPoints: any[], nPoints: int): Image;
 		(color: java.awt.Color, xPoints: Values, yPoints: Values): Image;
 		(color: java.awt.Color, xPoints: Values, yPoints: Values, nPoints: int): Image;
 	}

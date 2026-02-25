@@ -6,16 +6,16 @@ interface Convert {
 		(array: java.lang.Object): java.util.List;
 	}
 	bytesFromText: {
-		(text: string): number[];
-		(text: string, charset: string): number[];
+		(text: string): byte[];
+		(text: string, charset: string): byte[];
 	}
 	fromBase64: {
-		(content: number[]): string;
+		(content: byte[]): string;
 		(content: string): string;
 	}
 	fromBase64AsBytes: {
-		(content: number[]): number[];
-		(content: string): number[];
+		(content: byte[]): byte[];
+		(content: string): byte[];
 	}
 	fromHTML: {
 		(content: string): string;
@@ -24,16 +24,16 @@ interface Convert {
 		(content: string): string;
 	}
 	textFromBytes: {
-		(bytes: number[]): string;
-		(bytes: number[], charset: string): string;
+		(bytes: byte[]): string;
+		(bytes: byte[], charset: string): string;
 	}
 	toBase64: {
-		(content: number[]): string;
+		(content: byte[]): string;
 		(content: string): string;
 	}
 	toBase64AsBytes: {
-		(content: number[]): number[];
-		(content: string): number[];
+		(content: byte[]): byte[];
+		(content: string): byte[];
 	}
 	toByte: {
 		(value: int): byte;
@@ -54,7 +54,7 @@ interface Convert {
 		(object: java.lang.Object): java.lang.Exception;
 	}
 	toFile: {
-		(fileName: string, contentType: string, bytes: number[]): File;
+		(fileName: string, contentType: string, bytes: byte[]): File;
 	}
 	toFloat: {
 		(value: byte): float;
@@ -64,13 +64,13 @@ interface Convert {
 		(value: short): float;
 	}
 	toHEX: {
-		(bytes: number[]): string;
+		(bytes: byte[]): string;
 	}
 	toHTML: {
 		(content: string): string;
 	}
 	toHex: {
-		(bytes: number[]): string;
+		(bytes: byte[]): string;
 	}
 	toInt: {
 		(value: byte): int;

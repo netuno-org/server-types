@@ -1,12 +1,12 @@
-import {java} from '../types';
+import {} from '../types';
 import Values from '../objects/Values';
 
 interface Group {
 	all: {
-		(): java.util.List;
+		(): Values[];
 	}
 	allByCode: {
-		(codigo: string): java.util.List;
+		(codigo: string): Values[];
 	}
 	code: {
 		(): string;
@@ -46,7 +46,7 @@ interface Group {
 		(id: int): boolean;
 	}
 	search: {
-		(termo: string): java.util.List;
+		(termo: string): Values[];
 	}
 	searchFirst: {
 		(termo: string): Values;

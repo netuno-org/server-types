@@ -69,7 +69,7 @@ interface XLS {
 		(format: string): short;
 	}
 	getAllSheets: {
-		(): java.util.List;
+		(): org.apache.poi.ss.usermodel.Sheet[];
 	}
 	getCellData: {
 		(rowIndex: int, colIndex: int): Values;

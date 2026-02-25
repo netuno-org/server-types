@@ -11,6 +11,12 @@ interface Lang {
 	getCode: {
 		(): string;
 	}
+	getCountry: {
+		(): string;
+	}
+	getLanguage: {
+		(): string;
+	}
 	getLocale: {
 		(): java.util.Locale;
 	}

@@ -35,10 +35,10 @@ interface Val {
 		(): Values;
 	}
 	toJSON: {
-		(values: java.util.List): string;
-		(values: java.util.List, htmlEscape: boolean): string;
-		(values: java.util.List, htmlEscape: boolean, indentFactor: int): string;
-		(values: java.util.List, indentFactor: int): string;
+		(values: Values[]): string;
+		(values: Values[], htmlEscape: boolean): string;
+		(values: Values[], htmlEscape: boolean, indentFactor: int): string;
+		(values: Values[], indentFactor: int): string;
 		(values: Values): string;
 		(values: Values, htmlEscape: boolean): string;
 		(values: Values, htmlEscape: boolean, indentFactor: int): string;

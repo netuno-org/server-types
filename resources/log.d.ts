@@ -18,7 +18,7 @@ interface Logger {
 		(message: string, throwable: java.lang.Object): void;
 	}
 	print: {
-		(content: string[]): void;
+		(content: char[]): void;
 		(content: boolean): void;
 		(content: char): void;
 		(content: double): void;
@@ -29,7 +29,7 @@ interface Logger {
 		(content: long): void;
 	}
 	println: {
-		(content: string[]): void;
+		(content: char[]): void;
 		(content: boolean): void;
 		(content: char): void;
 		(content: double): void;

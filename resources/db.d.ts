@@ -1,8 +1,8 @@
 import {java, org} from '../types';
+import Values from '../objects/Values';
 import DBBatch from '../objects/DBBatch';
 import CheckExists from '../objects/CheckExists';
 import Column from '../objects/Column';
-import Values from '../objects/Values';
 import DataSchema from '../objects/DataSchema';
 import Operation from '../objects/Operation';
 import Where from '../objects/Where';
@@ -15,7 +15,7 @@ import Table from '../objects/Table';
 
 interface DB {
 	all: {
-		(table: string): java.util.List;
+		(table: string): Values[];
 	}
 	batch: {
 		(): DBBatch;
@@ -44,9 +44,9 @@ interface DB {
 		(table: string, data: Values): int;
 	}
 	deleteMany: {
-		(table: string, dataItems: java.lang.Object[]): number[];
-		(table: string, dataItems: java.util.List): number[];
-		(table: string, dataItems: Values): number[];
+		(table: string, dataItems: java.lang.Object[]): int[];
+		(table: string, dataItems: java.util.List): int[];
+		(table: string, dataItems: Values): int[];
 	}
 	escape: {
 		(data: string): string;
@@ -64,7 +64,7 @@ interface DB {
 		(sqlCommand: string, params: Values): int;
 	}
 	find: {
-		(table: string, params: Values): java.util.List;
+		(table: string, params: Values): Values[];
 	}
 	findFirst: {
 		(table: string, params: Values): Values;
@@ -86,6 +86,9 @@ interface DB {
 	getKey: {
 		(): string;
 	}
+	getVersion: {
+		(): float;
+	}
 	index: {
 		(): Index;
 	}
@@ -101,9 +104,9 @@ interface DB {
 		(table: string, data: Values): int;
 	}
 	insertMany: {
-		(table: string, dataItems: java.lang.Object[]): number[];
-		(table: string, dataItems: java.util.List): number[];
-		(table: string, dataItems: Values): number[];
+		(table: string, dataItems: java.lang.Object[]): int[];
+		(table: string, dataItems: java.util.List): int[];
+		(table: string, dataItems: Values): int[];
 	}
 	isH2: {
 		(): boolean;
@@ -146,10 +149,10 @@ interface DB {
 		(type: string): string;
 	}
 	query: {
-		(query: string): java.util.List;
-		(query: string, params: java.lang.Object[]): java.util.List;
-		(query: string, params: java.util.List): java.util.List;
-		(query: string, params: Values): java.util.List;
+		(query: string): Values[];
+		(query: string, params: java.lang.Object[]): Values[];
+		(query: string, params: java.util.List): Values[];
+		(query: string, params: Values): Values[];
 	}
 	queryFirst: {
 		(query: string): Values;
@@ -239,9 +242,12 @@ interface DB {
 		(table: string, data: Values): int;
 	}
 	updateMany: {
-		(table: string, dataItems: java.lang.Object[]): number[];
-		(table: string, dataItems: java.util.List): number[];
-		(table: string, dataItems: Values): number[];
+		(table: string, dataItems: java.lang.Object[]): int[];
+		(table: string, dataItems: java.util.List): int[];
+		(table: string, dataItems: Values): int[];
+	}
+	version: {
+		(): float;
 	}
 	where: {
 		(): Where;

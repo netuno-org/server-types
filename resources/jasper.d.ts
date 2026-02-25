@@ -8,7 +8,7 @@ interface Jasper {
 		(storage: typeof _storage): boolean;
 	}
 	exportToPdf: {
-		(): number[];
+		(): byte[];
 	}
 	exportToPdfFile: {
 		(storage: typeof _storage): boolean;

@@ -1,16 +1,31 @@
-import {java} from '../types';
+import {} from '../types';
 import Values from '../objects/Values';
 
 interface User {
 	all: {
-		(): java.util.List;
+		(): Values[];
 	}
 	allByCode: {
-		(code: string): java.util.List;
+		(code: string): Values[];
 	}
 	allProvidersData: {
 		(): Values;
 		(userId: int): Values;
+	}
+	authHistoryForceUnlock: {
+		(): void;
+		(userId: int): void;
+	}
+	authHistoryLatest: {
+		(): Values;
+		(userId: int): Values;
+	}
+	authHistoryLatestIsLocked: {
+		(): boolean;
+		(userId: int): boolean;
+	}
+	checkAuthHistoryConsecutiveFailure: {
+		(id: int): boolean;
 	}
 	code: {
 		(): string;
@@ -76,7 +91,7 @@ interface User {
 		(id: int): boolean;
 	}
 	search: {
-		(term: string): java.util.List;
+		(term: string): Values[];
 	}
 	searchFirst: {
 		(term: string): Values;
