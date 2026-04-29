@@ -22,9 +22,13 @@ interface In {
 	}
 	readAll: {
 		(): string;
+		(charset: string): string;
+		(charset: java.nio.charset.Charset): string;
 	}
 	readAllAndClose: {
 		(): string;
+		(charset: string): string;
+		(charset: java.nio.charset.Charset): string;
 	}
 	readAllBytes: {
 		(): byte[];
@@ -37,10 +41,12 @@ interface In {
 	}
 	readString: {
 		(): string;
+		(charset: string): string;
 		(charset: java.nio.charset.Charset): string;
 	}
 	readStringAndClose: {
 		(): string;
+		(charset: string): string;
 		(charset: java.nio.charset.Charset): string;
 	}
 	save: {

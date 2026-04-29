@@ -4,6 +4,9 @@ import DataSchema from './DataSchema';
 import Where from './Where';
 
 interface Relationship {
+	getAlias: {
+		(): string;
+	}
 	getColumn: {
 		(): string;
 	}
@@ -27,6 +30,9 @@ interface Relationship {
 	}
 	rightJoin: {
 		(relation: Relationship): Relationship;
+	}
+	setAlias: {
+		(alias: string): Relationship;
 	}
 	setColumn: {
 		(column: string): Relationship;

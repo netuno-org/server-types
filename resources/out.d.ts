@@ -30,7 +30,7 @@ interface Out {
 	getJSONHTMLEscape: {
 		(): boolean;
 	}
-	getJSONIdentFactor: {
+	getJSONIndentFactor: {
 		(): int;
 	}
 	getMirrors: {
@@ -56,7 +56,7 @@ interface Out {
 		(): boolean;
 		(htmlEscape: boolean): Out;
 	}
-	jsonIdentFactor: {
+	jsonIndentFactor: {
 		(): int;
 		(int: int): Out;
 	}
@@ -75,11 +75,29 @@ interface Out {
 		(bool: int): Out;
 		(obj: java.lang.Object): Out;
 		(text: string): Out;
+		(text: string, charset: string): Out;
+		(text: string, charset: java.nio.charset.Charset): Out;
 		(bool: long): Out;
 		(bool: short): Out;
 	}
+	printAndClose: {
+		(v: boolean): Out;
+		(v: byte): Out;
+		(v: char): Out;
+		(v: double): Out;
+		(v: float): Out;
+		(v: int): Out;
+		(text: java.lang.Object): Out;
+		(text: string): Out;
+		(text: string, charset: string): Out;
+		(text: string, charset: java.nio.charset.Charset): Out;
+		(v: long): Out;
+		(v: short): Out;
+	}
 	printf: {
 		(format: string, objects: java.lang.Object[]): Out;
+		(format: string, charset: string, objects: java.lang.Object[]): Out;
+		(format: string, charset: java.nio.charset.Charset, objects: java.lang.Object[]): Out;
 	}
 	println: {
 		(): Out;
@@ -91,13 +109,29 @@ interface Out {
 		(bool: int): Out;
 		(obj: java.lang.Object): Out;
 		(text: string): Out;
+		(line: string, charset: string): Out;
+		(line: string, charset: java.nio.charset.Charset): Out;
 		(bool: long): Out;
 		(bool: short): Out;
+	}
+	printlnAndClose: {
+		(v: boolean): Out;
+		(v: byte): Out;
+		(v: char): Out;
+		(v: double): Out;
+		(v: float): Out;
+		(v: int): Out;
+		(line: java.lang.Object): Out;
+		(line: string): Out;
+		(line: string, charset: string): Out;
+		(line: string, charset: java.nio.charset.Charset): Out;
+		(v: long): Out;
+		(v: short): Out;
 	}
 	setJSONHTMLEscape: {
 		(htmlEscape: boolean): Out;
 	}
-	setJSONIdentFactor: {
+	setJSONIndentFactor: {
 		(jsonIdentFactor: int): Out;
 	}
 	start: {

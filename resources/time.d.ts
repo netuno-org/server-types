@@ -262,6 +262,9 @@ interface Time {
 		(): java.time.Period;
 		(type: string): java.time.Period;
 	}
+	periodBetween: {
+		(startDateInclusive: java.time.LocalDate, endDateExclusive: java.time.LocalDate): java.time.Period;
+	}
 	periodFrom: {
 		(temporalAmount: java.time.temporal.TemporalAmount): java.time.Period;
 	}

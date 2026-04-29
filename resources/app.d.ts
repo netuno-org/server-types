@@ -3,6 +3,12 @@ import Values from '../objects/Values';
 import File from '../objects/File';
 
 interface App {
+	buildServiceFullURL: {
+		(path: string): string;
+	}
+	buildServiceURL: {
+		(path: string): string;
+	}
 	config: {
 		(): Values;
 	}

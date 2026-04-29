@@ -26,10 +26,15 @@ interface InputStream {
 		(): string;
 		(input: InputStream): string;
 		(input: InputStream, charset: string): string;
+		(input: InputStream, charset: java.nio.charset.Charset): string;
 		(r: java.io.Reader): string;
+		(charset: string): string;
+		(charset: java.nio.charset.Charset): string;
 	}
 	readAllAndClose: {
 		(): string;
+		(charset: string): string;
+		(charset: java.nio.charset.Charset): string;
 	}
 	readAllBytes: {
 		(): byte[];
@@ -46,10 +51,13 @@ interface InputStream {
 	readFromFile: {
 		(path: java.io.File): string;
 		(path: java.io.File, charset: string): string;
+		(path: java.io.File, charset: java.nio.charset.Charset): string;
 		(path: string): string;
 		(path: string, charset: string): string;
+		(path: string, charset: java.nio.charset.Charset): string;
 		(path: java.nio.file.Path): string;
 		(path: java.nio.file.Path, charset: string): string;
+		(path: java.nio.file.Path, charset: java.nio.charset.Charset): string;
 	}
 	readLine: {
 		(): string;
@@ -61,10 +69,12 @@ interface InputStream {
 	}
 	readString: {
 		(): string;
+		(charset: string): string;
 		(charset: java.nio.charset.Charset): string;
 	}
 	readStringAndClose: {
 		(): string;
+		(charset: string): string;
 		(charset: java.nio.charset.Charset): string;
 	}
 	reset: {

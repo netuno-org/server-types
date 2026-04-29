@@ -41,25 +41,34 @@ interface OutputStream {
 		(v: double): OutputStream;
 		(v: float): OutputStream;
 		(v: int): OutputStream;
-		(bytes: string): OutputStream;
+		(text: string): OutputStream;
+		(text: string, charset: string): OutputStream;
+		(text: string, charset: java.nio.charset.Charset): OutputStream;
 		(v: long): OutputStream;
 		(v: short): OutputStream;
 	}
 	printAndClose: {
 		(v: boolean): OutputStream;
+		(v: byte): OutputStream;
 		(v: char): OutputStream;
 		(v: double): OutputStream;
 		(v: float): OutputStream;
 		(v: int): OutputStream;
-		(bytes: string): OutputStream;
+		(text: string): OutputStream;
+		(text: string, charset: string): OutputStream;
+		(text: string, charset: java.nio.charset.Charset): OutputStream;
 		(v: long): OutputStream;
 		(v: short): OutputStream;
 	}
 	printf: {
 		(format: string, objects: java.lang.Object[]): OutputStream;
+		(format: string, charset: string, objects: java.lang.Object[]): OutputStream;
+		(format: string, charset: java.nio.charset.Charset, objects: java.lang.Object[]): OutputStream;
 	}
 	printfAndClose: {
 		(format: string, objects: java.lang.Object[]): OutputStream;
+		(format: string, charset: string, objects: java.lang.Object[]): OutputStream;
+		(format: string, charset: java.nio.charset.Charset, objects: java.lang.Object[]): OutputStream;
 	}
 	println: {
 		(): OutputStream;
@@ -69,18 +78,23 @@ interface OutputStream {
 		(v: double): OutputStream;
 		(v: float): OutputStream;
 		(v: int): OutputStream;
-		(bytes: string): OutputStream;
+		(text: string): OutputStream;
+		(text: string, charset: string): OutputStream;
+		(text: string, charset: java.nio.charset.Charset): OutputStream;
 		(v: long): OutputStream;
 		(v: short): OutputStream;
 	}
 	printlnAndClose: {
 		(): OutputStream;
 		(v: boolean): OutputStream;
+		(v: byte): OutputStream;
 		(v: char): OutputStream;
 		(v: double): OutputStream;
 		(v: float): OutputStream;
 		(v: int): OutputStream;
-		(bytes: string): OutputStream;
+		(text: string): OutputStream;
+		(text: string, charset: string): OutputStream;
+		(text: string, charset: java.nio.charset.Charset): OutputStream;
 		(v: long): OutputStream;
 		(v: short): OutputStream;
 	}
@@ -101,16 +115,6 @@ interface OutputStream {
 		(bytes: byte[], off: int, leng: int): void;
 		(b: int): void;
 	}
-	writeAndClose: {
-		(v: boolean): OutputStream;
-		(v: char): OutputStream;
-		(v: double): OutputStream;
-		(v: float): OutputStream;
-		(v: int): OutputStream;
-		(bytes: string): OutputStream;
-		(v: long): OutputStream;
-		(v: short): OutputStream;
-	}
 	writeBoolean: {
 		(v: boolean): OutputStream;
 	}
@@ -118,13 +122,15 @@ interface OutputStream {
 		(b: int): OutputStream;
 	}
 	writeBytes: {
-		(s: string): OutputStream;
+		(text: string): OutputStream;
+		(text: string, charset: string): OutputStream;
+		(text: string, charset: java.nio.charset.Charset): OutputStream;
 	}
 	writeChar: {
 		(v: int): OutputStream;
 	}
 	writeChars: {
-		(s: string): OutputStream;
+		(text: string): OutputStream;
 	}
 	writeDouble: {
 		(v: double): OutputStream;

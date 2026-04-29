@@ -5,8 +5,14 @@ interface WSMessage {
 	content: {
 		(): java.lang.Object;
 	}
+	data: {
+		(): Values;
+	}
 	getContent: {
 		(): java.lang.Object;
+	}
+	getData: {
+		(): Values;
 	}
 	getJSON: {
 		(): Values;

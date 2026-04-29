@@ -1,5 +1,5 @@
 import {org} from '../types';
-import Values from './Values';
+import Values from '../objects/Values';
 
 interface DataItem {
 	getCounter: {
@@ -177,4 +177,5 @@ interface DataItem {
 		(values: Values): DataItem;
 	}
 }
-export default DataItem;
+declare const _dataItem: DataItem;
+export default _dataItem;

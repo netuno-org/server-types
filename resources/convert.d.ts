@@ -23,6 +23,21 @@ interface Convert {
 	fromJSON: {
 		(content: string): string;
 	}
+	safeFileName: {
+		(fileName: string): string;
+	}
+	safePath: {
+		(path: string): string;
+	}
+	safeSystemPath: {
+		(path: string): string;
+	}
+	slug: {
+		(text: string): string;
+	}
+	stripAccents: {
+		(text: string): string;
+	}
 	textFromBytes: {
 		(bytes: byte[]): string;
 		(bytes: byte[], charset: string): string;
@@ -39,6 +54,9 @@ interface Convert {
 		(value: int): byte;
 		(value: long): byte;
 		(value: short): byte;
+	}
+	toCharset: {
+		(name: string): java.nio.charset.Charset;
 	}
 	toDouble: {
 		(value: byte): double;

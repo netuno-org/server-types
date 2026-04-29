@@ -65,6 +65,9 @@ interface Operation {
 	insert: {
 		(): Values;
 	}
+	insertAndReturn: {
+		(): Values;
+	}
 	isDebug: {
 		(): boolean;
 	}

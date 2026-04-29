@@ -3,6 +3,9 @@ import Values from './Values';
 import DataSchema from './DataSchema';
 
 interface RelationshipLink {
+	getAlias: {
+		(): string;
+	}
 	getFormLink: {
 		(): string;
 	}
@@ -11,6 +14,9 @@ interface RelationshipLink {
 	}
 	hasSubLinks: {
 		(): boolean;
+	}
+	setAlias: {
+		(alias: string): RelationshipLink;
 	}
 	setFormLink: {
 		(form: string): RelationshipLink;

@@ -64,6 +64,9 @@ export declare namespace com.itextpdf.layout.properties {
 	export type TextAlignment = any;
 	export type VerticalAlignment = any;
 }
+export declare namespace com.openai.client {
+	export type OpenAIClient = any;
+}
 export declare namespace com.rabbitmq.client {
 	export type Channel = any;
 	export type Connection = any;
@@ -104,6 +107,7 @@ export declare namespace java.lang {
 	export type Object = any;
 	export type Class = any;
 	export type String = any;
+	export type Number = any;
 	export type Throwable = any;
 	export type StackTraceElement = any;
 	export type Error = any;
@@ -266,15 +270,21 @@ export declare namespace org.netuno.psamata.os {
 export declare namespace org.netuno.psamata.ssh {
 	export type SSHClient = any;
 }
+export declare namespace org.netuno.tritao.ai.client {
+	export type Client$ToolCallback = any;
+}
+export declare namespace org.netuno.tritao.ai.vector {
+	export type VectorStore = any;
+}
 export declare namespace org.netuno.tritao.com {
 	export type ComponentData = any;
 	export type Configuration = any;
 }
 export declare namespace org.netuno.tritao.db {
-	export type DataItem$Status = any;
-	export type DataItem$StatusType = any;
 	export type Builder = any;
 	export type DBExecutor = any;
+	export type DataItem$Status = any;
+	export type DataItem$StatusType = any;
 }
 export declare namespace org.netuno.tritao.db.form {
 	export type Field = any;
@@ -302,6 +312,7 @@ export declare namespace org.netuno.tritao.hili {
 }
 export declare namespace org.netuno.tritao.resource {
 	export type Exec$Functions$Metric = any;
+	export type MCP$MCPMiddleware = any;
 	export type Setup$RunResult = any;
 }
 export declare namespace org.w3c.dom {

@@ -540,6 +540,13 @@ interface Values {
 	retainAll: {
 		(c: java.lang.Object[]): boolean;
 	}
+	reversed: {
+		(): any[];
+		(cls: java.lang.Class): any[];
+	}
+	reversedValues: {
+		(): Values;
+	}
 	safeString: {
 		(object: java.lang.Object): string;
 		(object: java.lang.Object, defaultValue: string): string;

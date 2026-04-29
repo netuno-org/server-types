@@ -10,6 +10,10 @@ interface URL {
 	endsWith: {
 		(string: string): boolean;
 	}
+	equals: {
+		(arg0: java.lang.Object): boolean;
+		(string: string): boolean;
+	}
 	equalsIgnoreCase: {
 		(string: string): boolean;
 	}

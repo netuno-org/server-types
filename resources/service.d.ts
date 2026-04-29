@@ -63,4 +63,5 @@ interface Service {
 		(): boolean;
 	}
 }
-export default Service;
+declare const _service: Service;
+export default _service;

@@ -35,7 +35,7 @@ interface DB {
 		(time: long): java.sql.Date;
 		(text: string): java.sql.Date;
 		(instant: java.time.Instant): java.util.Date;
-		(localDateTime: java.time.LocalDate): java.sql.Date;
+		(localDate: java.time.LocalDate): java.sql.Date;
 	}
 	delete: {
 		(table: string, id: int): int;
@@ -128,15 +128,18 @@ interface DB {
 	}
 	link: {
 		(formLink: string): Link;
+		(formLink: string, alias: string): Link;
 		(formLink: string, where: Where): Link;
 		(formLink: string, where: Where, link: Link): Link;
 	}
 	manyToOne: {
 		(tableName: string, column: string): Relationship;
+		(tableName: string, alias: string, column: string): Relationship;
 		(tableName: string, column: string, where: Where): Relationship;
 	}
 	oneToMany: {
 		(tableName: string, column: string): Relationship;
+		(tableName: string, alias: string, column: string): Relationship;
 		(tableName: string, column: string, where: Where): Relationship;
 	}
 	page: {

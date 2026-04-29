@@ -18,6 +18,19 @@ interface Where {
 	equal: {
 		(value: java.lang.Object): Where;
 	}
+	equals: {
+		(value: boolean): Where;
+		(value: java.lang.Number): Where;
+		(arg0: java.lang.Object): boolean;
+		(value: string): Where;
+		(value: java.sql.Date): Where;
+		(value: java.sql.Time): Where;
+		(value: java.sql.Timestamp): Where;
+		(value: java.time.LocalDate): Where;
+		(value: java.time.LocalDateTime): Where;
+		(value: java.time.LocalTime): Where;
+		(value: java.util.UUID): Where;
+	}
 	getConditions: {
 		(): ConditionalOperator[];
 	}
@@ -43,12 +56,24 @@ interface Where {
 	lessThan: {
 		(value: java.lang.Object): Where;
 	}
+	notContains: {
+		(value: java.lang.Object): Where;
+	}
+	notEndsWith: {
+		(value: java.lang.Object): Where;
+	}
+	notEqual: {
+		(value: java.lang.Object): Where;
+	}
 	notEquals: {
 		(value: java.lang.Object): Where;
 	}
 	notIn: {
 		(values: java.lang.Object[]): Where;
 		(values: java.lang.Object): Where;
+	}
+	notStartsWith: {
+		(value: java.lang.Object): Where;
 	}
 	or: {
 		(column: string): Where;

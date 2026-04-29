@@ -1,3 +1,6 @@
+export { default as _service } from './resources/service';
+export { default as _dataItem } from './resources/dataItem';
+export { default as _ai } from './resources/ai';
 export { default as _app } from './resources/app';
 export { default as _auth } from './resources/auth';
 export { default as _cors } from './resources/cors';
@@ -24,6 +27,7 @@ export { default as _jwt } from './resources/jwt';
 export { default as _jasper } from './resources/jasper';
 export { default as _lang } from './resources/lang';
 export { default as _log } from './resources/log';
+export { default as _mcp } from './resources/mcp';
 export { default as _monitor } from './resources/monitor';
 export { default as _os } from './resources/os';
 export { default as _out } from './resources/out';
