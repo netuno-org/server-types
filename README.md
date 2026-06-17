@@ -11,7 +11,7 @@ The goal is to gain auto-complete using the Netuno low-code server resources.
 Inside your application, in the `server` folder, execute:
 
 ```bash
-npm install -S @netuno/server-types
+bun add @netuno/server-types
 ```
 
 ## How To Use
