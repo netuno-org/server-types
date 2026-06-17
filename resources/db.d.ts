@@ -43,6 +43,10 @@ interface DB {
 		(table: string, data: Values | DataSchema | java.util.Map): int;
 		(table: string, data: Values): int;
 	}
+	deleteIfExists: {
+		(table: string, data: Values | DataSchema | java.util.Map): boolean;
+		(table: string, data: Values): boolean;
+	}
 	deleteMany: {
 		(table: string, dataItems: java.lang.Object[]): int[];
 		(table: string, dataItems: java.util.List): int[];

@@ -57,6 +57,9 @@ interface File {
 	fullPath: {
 		(): string;
 	}
+	fullURI: {
+		(): string;
+	}
 	getBaseName: {
 		(): string;
 	}
@@ -187,6 +190,9 @@ interface File {
 	}
 	sizeMB: {
 		(): double;
+	}
+	uri: {
+		(): string;
 	}
 	writer: {
 		(): java.io.Writer;

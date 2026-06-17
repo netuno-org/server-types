@@ -21,8 +21,15 @@ interface FileVectorStore {
 	delete: {
 		(collection: string, id: string): void;
 	}
+	deleteByMetadata: {
+		(collection: string, metadataFilter: Values): void;
+	}
 	deleteCollection: {
 		(collection: string): void;
+	}
+	getAll: {
+		(collection: string): Values;
+		(collection: string, metadataFilter: Values): Values;
 	}
 	getProvider: {
 		(): string;

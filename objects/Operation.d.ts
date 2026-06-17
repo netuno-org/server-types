@@ -11,6 +11,9 @@ interface Operation {
 	all: {
 		(): Values[];
 	}
+	count: {
+		(): int;
+	}
 	debug: {
 		(enabled: boolean): Operation;
 	}

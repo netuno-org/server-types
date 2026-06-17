@@ -224,9 +224,9 @@ interface Config {
 		(content: org.netuno.psamata.net.Remote$Response): Values;
 	}
 	get: {
-		(key: int): java.lang.Object;
+		(key: int): any;
 		(key: java.lang.Object): java.lang.Object;
-		(key: string): java.lang.Object;
+		(key: string): any;
 		(key: string, type: java.lang.Class): any;
 	}
 	getBoolean: {
@@ -456,7 +456,7 @@ interface Config {
 		(): int;
 	}
 	list: {
-		(): any[];
+		(): java.lang.Object[];
 		(cls: java.lang.Class): any[];
 	}
 	listIterator: {
@@ -669,7 +669,7 @@ interface Config {
 		(object: java.lang.Object, htmlEscape: boolean, indentFactor: int): string;
 	}
 	toList: {
-		(): any[];
+		(): java.lang.Object[];
 		(cls: java.lang.Class): any[];
 	}
 	toLongArray: {
@@ -696,6 +696,14 @@ interface Config {
 	}
 	unsetAll: {
 		(): void;
+	}
+	unvaluedList: {
+		(): java.lang.Object[];
+		(values: Values): java.lang.Object[];
+	}
+	unvaluedMap: {
+		(): Values | DataSchema | java.util.Map;
+		(values: Values): Values | DataSchema | java.util.Map;
 	}
 	values: {
 		(): java.lang.Object[];

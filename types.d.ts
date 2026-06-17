@@ -64,6 +64,15 @@ export declare namespace com.itextpdf.layout.properties {
 	export type TextAlignment = any;
 	export type VerticalAlignment = any;
 }
+export declare namespace com.mongodb.client.model {
+	export type DeleteOptions = any;
+	export type FindOneAndReplaceOptions = any;
+	export type FindOneAndUpdateOptions = any;
+	export type InsertManyOptions = any;
+	export type InsertOneOptions = any;
+	export type ReplaceOptions = any;
+	export type UpdateOptions = any;
+}
 export declare namespace com.openai.client {
 	export type OpenAIClient = any;
 }
@@ -109,11 +118,11 @@ export declare namespace java.lang {
 	export type String = any;
 	export type Number = any;
 	export type Throwable = any;
+	export type Iterable = any;
 	export type StackTraceElement = any;
 	export type Error = any;
 	export type Exception = any;
 	export type CharSequence = any;
-	export type Iterable = any;
 }
 export declare namespace java.nio.charset {
 	export type Charset = any;
@@ -231,11 +240,21 @@ export declare namespace org.apache.poi.ss.usermodel {
 export declare namespace org.apache.poi.ss.util {
 	export type CellRangeAddress = any;
 }
+export declare namespace org.bson {
+	export type BsonType = any;
+	export type Document = any;
+}
+export declare namespace org.bson.conversions {
+	export type Bson = any;
+}
 export declare namespace org.graalvm.polyglot {
 	export type Value = any;
 }
 export declare namespace org.jsoup {
 	export type Connection = any;
+}
+export declare namespace org.jsoup.helper {
+	export type W3CDom = any;
 }
 export declare namespace org.jsoup.nodes {
 	export type Document$OutputSettings = any;

@@ -40,6 +40,12 @@ interface HTML {
 		(type: string): org.jsoup.safety.Safelist;
 		(copy: org.jsoup.safety.Safelist): org.jsoup.safety.Safelist;
 	}
+	toW3CDom: {
+		(doc: org.jsoup.nodes.Document): org.w3c.dom.Document;
+	}
+	w3cDom: {
+		(): org.jsoup.helper.W3CDom;
+	}
 }
 declare const _html: HTML;
 export default _html;

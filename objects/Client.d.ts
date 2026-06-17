@@ -27,6 +27,9 @@ interface Client {
 	instance: {
 		(): com.openai.client.OpenAIClient;
 	}
+	invokeTool: {
+		(toolName: string, arguments: Values): Values;
+	}
 	isInitialized: {
 		(): boolean;
 	}

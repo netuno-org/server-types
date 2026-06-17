@@ -107,6 +107,10 @@ interface PDF {
 		(storage: typeof _storage, encoding: string): com.itextpdf.kernel.font.PdfFont;
 		(storage: typeof _storage, encoding: string, embedded: boolean): com.itextpdf.kernel.font.PdfFont;
 	}
+	fromHTML: {
+		(content: string): File;
+		(doc: org.w3c.dom.Document): File;
+	}
 	getDocument: {
 		(): com.itextpdf.layout.Document;
 	}
